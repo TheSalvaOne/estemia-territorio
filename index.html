@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Auramed — Escuela de élite en Medicina Estética, Antienvejecimiento y Nutrición. Partner oficial UCAM. Títulos con créditos ECTS y prácticas One to One en Madrid.">
+  <title>Auramed · Medicina Estética de Élite | Partner UCAM</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    /* ── HOME-SPECIFIC ── */
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; position: relative; z-index: 1; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(184,150,62,0.15); border: 1px solid rgba(184,150,62,0.4); color: var(--gold-light); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 50px; margin-bottom: 24px; }
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin: 32px 0; }
+    .trust-row { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .trust-item { display: flex; align-items: center; gap: 6px; color: rgba(255,255,255,0.6); font-size: 0.78rem; font-weight: 500; }
+    .trust-check { width: 18px; height: 18px; background: rgba(45,122,90,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #4ade80; font-size: 0.65rem; flex-shrink: 0; }
+
+    /* Hero card */
+    .hero-visual-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 32px; backdrop-filter: blur(16px); }
+    .stat-grid-2x2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.06); border-radius: 8px; overflow: hidden; margin-bottom: 20px; }
+    .hstat { background: rgba(10,22,40,0.8); padding: 24px; text-align: center; }
+    .hstat-n { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 700; color: var(--gold-light); line-height: 1; display: block; }
+    .hstat-l { color: rgba(255,255,255,0.5); font-size: 0.75rem; margin-top: 4px; display: block; }
+    .ucam-strip { display: flex; align-items: center; gap: 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(184,150,62,0.3); border-radius: 8px; padding: 14px 18px; }
+    .ucam-seal { width: 48px; height: 48px; background: var(--gold); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-weight: 700; color: var(--navy); font-size: 0.9rem; flex-shrink: 0; }
+    .ucam-t1 { color: var(--white); font-size: 0.82rem; font-weight: 600; }
+    .ucam-t2 { color: rgba(255,255,255,0.45); font-size: 0.72rem; }
+
+    /* Problemas */
+    .pain-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background: linear-gradient(90deg,#b91c1c,#ef4444); }
+    .pain-card { position: relative; overflow: hidden; }
+    .pain-icon-box { width: 44px; height: 44px; background: rgba(185,28,28,0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 16px; }
+
+    /* Programa table */
+    .prog-table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-md); }
+    .prog-table thead { background: var(--navy); }
+    .prog-table thead th { padding: 16px 20px; text-align: left; color: rgba(255,255,255,0.5); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+    .prog-table thead th:first-child { color: var(--white); }
+    .prog-table tbody tr { border-bottom: 1px solid var(--border); transition: background 0.2s; }
+    .prog-table tbody tr:last-child { border-bottom: none; }
+    .prog-table tbody tr:hover { background: var(--ivory); }
+    .prog-table td { padding: 20px; font-size: 0.9rem; color: var(--slate); vertical-align: top; }
+    .prog-table td:first-child { color: var(--navy); font-weight: 600; font-size: 1rem; }
+    .prog-feat { background: rgba(184,150,62,0.04) !important; }
+
+    /* Prácticas clínicas */
+    .clinics-section { background: var(--navy); }
+    .clinic-logos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; margin-top: 48px; }
+    .clinic-logo-box { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 16px 12px; display: flex; align-items: center; justify-content: center; min-height: 64px; transition: all 0.25s; }
+    .clinic-logo-box:hover { background: rgba(255,255,255,0.09); border-color: rgba(184,150,62,0.3); }
+    .clinic-logo-box img { max-height: 36px; width: auto; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.6; transition: opacity 0.25s; }
+    .clinic-logo-box:hover img { opacity: 0.9; }
+    .clinic-name { color: rgba(255,255,255,0.6); font-size: 0.72rem; text-align: center; }
+
+    /* Testimonials */
+    .testimonials-section { background: var(--white); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+
+    /* CTA final */
+    .cta-section { background: var(--navy); text-align: center; position: relative; overflow: hidden; }
+    .cta-section::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse 80% 50% at 50% 100%, rgba(184,150,62,0.12) 0%, transparent 60%), radial-gradient(ellipse 60% 40% at 50% 0%, rgba(45,106,173,0.18) 0%, transparent 60%); }
+    .cta-inner { position: relative; z-index: 1; }
+    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-visual-card { display: none; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .prog-table { font-size: 0.85rem; }
+      .prog-table td, .prog-table th { padding: 14px; }
+    }
+    @media (max-width: 600px) {
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas .btn { width: 100%; }
+      .cta-btns { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav id="main-nav" role="navigation" aria-label="Navegación principal">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Auramed inicio">Aura<span>med</span></a>
+    <div class="nav-links" role="list">
+      <a href="index.html" role="listitem">Inicio</a>
+      <a href="servicios.html" role="listitem">Programas</a>
+      <a href="nosotros.html" role="listitem">Nosotros</a>
+      <a href="blog/index.html" role="listitem">Blog</a>
+      <a href="contacto.html" role="listitem">Contacto</a>
+    </div>
+    <a href="contacto.html" class="btn btn-primary btn-sm nav-cta">Reservar plaza</a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="nav-mobile" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+  <a href="index.html">Inicio</a>
+  <a href="servicios.html">Programas</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="blog/index.html">Blog</a>
+  <a href="contacto.html">Contacto</a>
+  <a href="contacto.html" class="btn btn-primary btn-lg">Reservar plaza</a>
+</div>
+
+<main id="main-content">
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-badge animate-fade-up">✦ Formación Médica de Élite · Madrid</div>
+        <h1 id="hero-heading" class="animate-fade-up delay-1" style="color:var(--white);">
+          Deja de Buscar Entre el Ruido.<br>
+          <em style="font-style:italic; color:var(--gold-light);">Aquí está la Formación Real</em> que Transforma tu Carrera.
+        </h1>
+        <p class="animate-fade-up delay-2" style="color:rgba(255,255,255,0.7); font-size:1.08rem; margin-top:16px;">
+          Título universitario oficial con <strong style="color:var(--white);">créditos ECTS reconocidos en Europa</strong> y prácticas presenciales <strong style="color:var(--white);">uno a uno</strong> en quirófano junto a los mejores especialistas de Madrid.
+        </p>
+        <div class="hero-ctas animate-fade-up delay-3">
+          <a href="contacto.html" class="btn btn-primary btn-lg">Reserva tu Plaza →</a>
+          <a href="servicios.html" class="btn btn-secondary btn-lg">Ver Programas</a>
+        </div>
+        <div class="trust-row animate-fade-up delay-4">
+          <div class="trust-item"><div class="trust-check">✓</div> Partner oficial UCAM</div>
+          <div class="trust-item"><div class="trust-check">✓</div> Dr. Rafael Linares</div>
+          <div class="trust-item"><div class="trust-check">✓</div> Matrícula 365 días</div>
+          <div class="trust-item"><div class="trust-check">✓</div> 89% empleabilidad</div>
+        </div>
+      </div>
+      <div class="hero-visual-card animate-fade-up delay-2">
+        <div class="stat-grid-2x2">
+          <div class="hstat"><span class="hstat-n">1:1</span><span class="hstat-l">Ratio alumno–médico en quirófano</span></div>
+          <div class="hstat"><span class="hstat-n">90</span><span class="hstat-l">Créditos ECTS · Máster completo</span></div>
+          <div class="hstat"><span class="hstat-n">365</span><span class="hstat-l">Días al año con matrícula abierta</span></div>
+          <div class="hstat"><span class="hstat-n">+20</span><span class="hstat-l">Clínicas partner en Madrid</span></div>
+        </div>
+        <div class="ucam-strip">
+          <div class="ucam-seal">UC</div>
+          <div>
+            <div class="ucam-t1">Universidad Católica de Murcia</div>
+            <div class="ucam-t2">Título oficial · Créditos ECTS · Validez europea</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STATS STRIP ═══ -->
+<section class="stats-strip" aria-label="Cifras clave">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="reveal">
+        <span class="stat-num">73%</span>
+        <div class="stat-label">Alumnos captados por recomendación de exalumnos</div>
+      </div>
+      <div class="reveal">
+        <span class="stat-num">89%</span>
+        <div class="stat-label">Exalumnos ejerciendo la profesión para la que se formaron</div>
+      </div>
+      <div class="reveal">
+        <span class="stat-num">+500</span>
+        <div class="stat-label">Titulados en Medicina Estética y Tricología</div>
+      </div>
+      <div class="reveal">
+        <span class="stat-num">+20</span>
+        <div class="stat-label">Clínicas partner de prácticas en toda España</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROBLEMA ═══ -->
+<section style="background:var(--white);" aria-labelledby="problema-heading">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="eyebrow">El problema real</span>
+      <div class="divider-gold"></div>
+      <h2 id="problema-heading">El Mercado de Postgrados Médicos Está Roto</h2>
+      <p>Cada año aparecen cientos de "cursos de medicina estética". La mayoría comparten algo: mucho marketing, poco quirófano y un título que no vale nada en la práctica clínica.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card pain-card reveal">
+        <div class="pain-icon-box">🏴‍☠️</div>
+        <h3 style="font-size:1.1rem; margin-bottom:8px;">Títulos sin validez real</h3>
+        <p style="font-size:0.9rem;">Certificados de "academias privadas" sin reconocimiento universitario ni créditos ECTS. Bonitos en papel, vacíos en la consulta.</p>
+      </div>
+      <div class="card pain-card reveal">
+        <div class="pain-icon-box">👥</div>
+        <h3 style="font-size:1.1rem; margin-bottom:8px;">Prácticas masificadas</h3>
+        <p style="font-size:0.9rem;">15 alumnos observando cómo el médico trabaja en el paciente. Ves un procedimiento desde la tercera fila y te vas sin haber tocado nada.</p>
+      </div>
+      <div class="card pain-card reveal">
+        <div class="pain-icon-box">💳</div>
+        <h3 style="font-size:1.1rem; margin-bottom:8px;">Precios opacos</h3>
+        <p style="font-size:0.9rem;">Precios "iniciales" que se multiplican con intereses bancarios, módulos ocultos y condiciones de cancelación imposibles de leer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BENEFICIOS / SOLUCIÓN ═══ -->
+<section style="background:var(--navy);" aria-labelledby="solucion-heading">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="eyebrow" style="color:var(--gold-light);">El Método Auramed</span>
+      <div class="divider-gold"></div>
+      <h2 id="solucion-heading" style="color:var(--white);">3 Razones por las que Auramed es Diferente</h2>
+      <p style="color:rgba(255,255,255,0.6);">No es otro curso más. Es el puente directo a la práctica clínica real.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card-dark reveal" style="text-align:center; padding:40px 32px;">
+        <div style="font-size:2.5rem; margin-bottom:16px;">🎓</div>
+        <h3 style="color:var(--gold-light); margin-bottom:12px;">Título Oficial UCAM</h3>
+        <p style="color:rgba(255,255,255,0.6); font-size:0.9rem;">Créditos ECTS reconocidos en toda Europa. Partner oficial de la Universidad Católica de Murcia. No es un certificado privado: es un título universitario real.</p>
+      </div>
+      <div class="card-dark reveal" style="text-align:center; padding:40px 32px; border-color:rgba(184,150,62,0.4);">
+        <div style="font-size:2.5rem; margin-bottom:16px;">🔬</div>
+        <h3 style="color:var(--gold-light); margin-bottom:12px;">Prácticas One to One</h3>
+        <p style="color:rgba(255,255,255,0.6); font-size:0.9rem;">Único alumno en quirófano con el especialista. Sin grupos, sin turnos de observación. Las preguntas son tuyas, la corrección es tuya, la experiencia es plena.</p>
+      </div>
+      <div class="card-dark reveal" style="text-align:center; padding:40px 32px;">
+        <div style="font-size:2.5rem; margin-bottom:16px;">📅</div>
+        <h3 style="color:var(--gold-light); margin-bottom:12px;">Flexibilidad Total</h3>
+        <p style="color:rgba(255,255,255,0.6); font-size:0.9rem;">Matrícula abierta 365 días. Pago por módulos sin comisiones bancarias. Empieza cuando estés listo, no cuando el calendario de la academia lo decida.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROGRAMAS TABLE ═══ -->
+<section style="background:var(--white);" aria-labelledby="programas-heading">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="eyebrow">Estructura del programa</span>
+      <div class="divider-gold"></div>
+      <h2 id="programas-heading">Elige el Nivel que se Adapta a tu Carrera</h2>
+      <p>Tres niveles de titulación, un mismo estándar de excelencia clínica. Todos incluyen prácticas presenciales One to One.</p>
+    </div>
+    <div class="reveal">
+      <table class="prog-table" role="table" aria-label="Programas académicos Auramed">
+        <thead>
+          <tr>
+            <th scope="col">Titulación</th>
+            <th scope="col">Créditos ECTS</th>
+            <th scope="col">Perfil</th>
+            <th scope="col">Duración</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="prog-feat">
+            <td>Máster Medicina Estética, Antienvejecimiento y Nutrición <span class="badge badge-gold" style="margin-left:8px;">⭐ Recomendado</span></td>
+            <td><span class="badge badge-navy">90 ECTS</span></td>
+            <td>Licenciados o Graduados en Medicina</td>
+            <td>12–18 meses</td>
+          </tr>
+          <tr>
+            <td>Máster Medicina Estética · Online</td>
+            <td><span class="badge badge-navy">60 ECTS</span></td>
+            <td>Licenciados o Graduados en Medicina</td>
+            <td>10–14 meses</td>
+          </tr>
+          <tr>
+            <td>Máster Tricología y Cirugía de Trasplante Capilar · Semipresencial</td>
+            <td><span class="badge badge-navy">90 ECTS</span></td>
+            <td>Licenciados o Graduados en Medicina</td>
+            <td>12–18 meses</td>
+          </tr>
+          <tr>
+            <td>Máster Tricología y Cirugía de Trasplante Capilar · Online</td>
+            <td><span class="badge badge-navy">60 ECTS</span></td>
+            <td>Licenciados o Graduados en Medicina</td>
+            <td>10–14 meses</td>
+          </tr>
+          <tr>
+            <td>Máster Cirugía Capilar en Enfermería · Semipresencial</td>
+            <td><span class="badge badge-navy">60 ECTS</span></td>
+            <td>Diplomados o Graduados en Enfermería</td>
+            <td>10–14 meses</td>
+          </tr>
+          <tr>
+            <td>Experto en Cirugía de Injerto Capilar en Enfermería · Online</td>
+            <td><span class="badge badge-navy">29 ECTS</span></td>
+            <td>Diplomados o Graduados en Enfermería</td>
+            <td>6–9 meses</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="text-center" style="margin-top:32px;">
+      <a href="servicios.html" class="btn btn-primary btn-lg">Ver todos los programas →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CLÍNICAS PARTNER ═══ -->
+<section class="clinics-section" aria-labelledby="clinicas-heading">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="eyebrow" style="color:var(--gold-light);">Prácticas en Madrid</span>
+      <div class="divider-gold"></div>
+      <h2 id="clinicas-heading" style="color:var(--white);">Más de 20 Clínicas de Vanguardia te Esperan</h2>
+      <p style="color:rgba(255,255,255,0.6);">Tus prácticas se realizan en centros médicos reales con especialistas de reconocido prestigio en Madrid y otras ciudades.</p>
+    </div>
+    <div class="clinic-logos-grid reveal">
+      <div class="clinic-logo-box" title="Model Clinics"><span class="clinic-name">Model Clinics</span></div>
+      <div class="clinic-logo-box" title="Clínica Londres"><span class="clinic-name">Clínica Londres</span></div>
+      <div class="clinic-logo-box" title="Le Med"><span class="clinic-name">Le Med</span></div>
+      <div class="clinic-logo-box" title="Clínica Kire"><span class="clinic-name">Clínica Kire</span></div>
+      <div class="clinic-logo-box" title="Clínica Lovin"><span class="clinic-name">Clínica Lovin</span></div>
+      <div class="clinic-logo-box" title="Clínica CAIS"><span class="clinic-name">Clínica CAIS</span></div>
+      <div class="clinic-logo-box" title="Dra. Prieto"><span class="clinic-name">Dra. Prieto</span></div>
+      <div class="clinic-logo-box" title="Del Río Estética"><span class="clinic-name">Del Río Estética</span></div>
+      <div class="clinic-logo-box" title="Dra. Asunción Gil"><span class="clinic-name">Dra. Asunción Gil</span></div>
+      <div class="clinic-logo-box" title="Dr. Luis Berlanga"><span class="clinic-name">Dr. Luis Berlanga</span></div>
+      <div class="clinic-logo-box" title="Clínica Critón"><span class="clinic-name">Clínica Critón</span></div>
+      <div class="clinic-logo-box" title="Centro Azuaje"><span class="clinic-name">Centro Azuaje</span></div>
+    </div>
+    <div class="text-center" style="margin-top:40px;">
+      <a href="servicios.html#practicas" class="btn btn-secondary">Ver todas las clínicas partner</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIOS ═══ -->
+<section class="testimonials-section" aria-labelledby="testimonios-heading">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="eyebrow">Prueba social</span>
+      <div class="divider-gold"></div>
+      <h2 id="testimonios-heading">Lo que Dicen Nuestros Alumnos</h2>
+      <p>El 73% de nuestros estudiantes vienen recomendados por exalumnos. Esto no se construye con publicidad, se construye con resultados.</p>
+    </div>
+    <div class="testimonials-grid">
+      <article class="testimonial-card reveal">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">Las prácticas One to One son lo que ningún otro máster ofrece. Tener al especialista para mí sola, corrigiéndome en tiempo real, hizo que aprendiera más en dos jornadas que en meses de teoría.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">MP</div>
+          <div>
+            <div class="author-name">María Pilar García Serrato</div>
+            <div class="author-role">Médico · Máster Medicina Estética</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </article>
+      <article class="testimonial-card reveal">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">Empecé Auramed recién graduada, sin experiencia clínica en estética. Al terminar ya trabajaba en una clínica. El título UCAM me abrió puertas que ningún certificado privado habría podido abrir.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">SF</div>
+          <div>
+            <div class="author-name">Socorro Ferreño Castelli</div>
+            <div class="author-role">Médico · Máster Semipresencial</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </article>
+      <article class="testimonial-card reveal">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">La flexibilidad de pago por módulos fue decisiva. Pude compaginar la formación con mi trabajo sin endeudarme con un banco. Y la calidad académica es de primer nivel, sin duda.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">JJ</div>
+          <div>
+            <div class="author-name">José Javier García Romero</div>
+            <div class="author-role">Médico · Máster Online</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="text-center" style="margin-top:40px;">
+      <a href="nosotros.html#valoraciones" class="btn btn-outline">Ver más valoraciones</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA FINAL ═══ -->
+<section class="cta-section" aria-labelledby="cta-heading">
+  <div class="container">
+    <div class="cta-inner reveal">
+      <span class="eyebrow" style="color:var(--gold-light);">Es el momento</span>
+      <div class="divider-gold" style="margin:16px auto;"></div>
+      <h2 id="cta-heading" style="color:var(--white); max-width:700px; margin:0 auto 16px;">Hay Médicos que Esperan la Oportunidad Perfecta. Los Mejores la Crean.</h2>
+      <p style="color:rgba(255,255,255,0.65); max-width:540px; margin:0 auto; font-size:1.05rem;">Las plazas de prácticas One to One son limitadas. Si has llegado hasta aquí, ya sabes que esto es diferente.</p>
+      <div class="cta-btns">
+        <a href="contacto.html" class="btn btn-primary btn-lg">Reservar mi plaza ahora →</a>
+        <a href="servicios.html" class="btn btn-secondary btn-lg">Explorar programas</a>
+      </div>
+      <p style="margin-top:20px; font-size:0.8rem; color:rgba(255,255,255,0.3);">Sin compromiso · Primera consulta gratuita con el equipo académico</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Aura<span>med</span></div>
+        <p class="footer-desc">Escuela de referencia en Medicina Estética, Antienvejecimiento y Nutrición. Partner oficial de la Universidad Católica de Murcia (UCAM).</p>
+        <a href="contacto.html" class="footer-contact-item">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013 5.18 2 2 0 015 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          +34 656 438 139
+        </a>
+        <a href="mailto:info@auramed.es" class="footer-contact-item">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          info@auramed.es
+        </a>
+        <a href="https://maps.google.com/?q=C+Torquemada+16+Madrid" class="footer-contact-item" target="_blank" rel="noopener">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          C/ Torquemada 16 · Madrid
+        </a>
+      </div>
+      <div class="footer-col">
+        <h5>Programas</h5>
+        <ul>
+          <li><a href="servicios.html#medicina">Medicina Estética</a></li>
+          <li><a href="servicios.html#tricologia">Tricología Capilar</a></li>
+          <li><a href="servicios.html#enfermeria">Enfermería Capilar</a></li>
+          <li><a href="servicios.html#auxiliar">Técnico Auxiliar</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Auramed</h5>
+        <ul>
+          <li><a href="nosotros.html">Sobre nosotros</a></li>
+          <li><a href="servicios.html#practicas">Clínicas de prácticas</a></li>
+          <li><a href="nosotros.html#ucam">Partner UCAM</a></li>
+          <li><a href="blog/index.html">Blog y recursos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="legal/aviso-legal.html">Aviso legal</a></li>
+          <li><a href="legal/privacidad.html">Política de privacidad</a></li>
+          <li><a href="legal/cookies.html">Política de cookies</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Auramed · Partner académico: UCAM · Todos los derechos reservados</p>
+      <div class="footer-legal">
+        <a href="legal/aviso-legal.html">Aviso legal</a>
+        <a href="legal/privacidad.html">Privacidad</a>
+        <a href="legal/cookies.html">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ COOKIE BANNER ═══ -->
+<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+  <p>Utilizamos cookies propias y de terceros para mejorar tu experiencia. Consulta nuestra <a href="legal/cookies.html">política de cookies</a>.</p>
+  <div class="cookie-btns">
+    <button id="cookie-decline" class="btn btn-secondary btn-sm">Rechazar</button>
+    <button id="cookie-accept" class="btn btn-primary btn-sm">Aceptar</button>
+  </div>
+</div>
+
+<!-- ═══ SCROLL TOP ═══ -->
+<button id="scroll-top" aria-label="Volver arriba">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>
