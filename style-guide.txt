@@ -1,0 +1,346 @@
+═══════════════════════════════════════════════════════════════════════
+ESTEMIA · GUÍA DE ESTILO Y CONVENCIONES DE CÓDIGO
+Para el equipo de diseño y desarrollo front-end
+═══════════════════════════════════════════════════════════════════════
+
+Oye Hugo, aquí van todas las convenciones del proyecto para que
+cualquier persona que entre al repo sepa exactamente cómo trabajamos.
+
+Cuando lo tengas todo pulido en Word y Figma, revisa el resultado
+final con esta guía al lado para asegurarte de que todo cuadra.
+
+───────────────────────────────────────────────────────────────────────
+1. NOMENCLATURA (CSS / HTML / JS)
+───────────────────────────────────────────────────────────────────────
+
+▸ CSS: kebab-case en todo momento.
+    Bien:   .hero-grid,  .btn--primary,  .prog-card-img
+    Mal:    .heroGrid,   .BtnPrimary,    .ProgCardImg
+
+▸ Metodología: BEM adaptado (bloque__elemento--modificador).
+    Bloque:     .card
+    Elemento:   .card__body, .card__image
+    Modificador: .card--dark, .card--featured
+
+▸ State classes: prefijo "is-" para estados gestionados por JS.
+    .is-open     → menú hamburguesa / FAQ abierto
+    .is-visible  → scroll-top visible / reveal activado
+    .is-active   → enlace de navegación activo
+    .is-invalid  → campo de formulario con error
+    .is-valid    → campo de formulario correcto
+    .is-hidden   → cookie banner ocultado
+
+▸ JS: camelCase para funciones y variables.
+    Bien:   initNav(), isFormValid, scrollTopBtn
+    Mal:    init_nav(), is_form_valid
+
+▸ IDs: kebab-case, solo cuando se necesita (JS o label for=).
+    Ejemplo: id="main-nav", id="cookie-banner", id="nombre-error"
+
+▸ Archivos: kebab-case con extensión lowercase.
+    index.html, nosotros.html, main.css, blog.css
+
+───────────────────────────────────────────────────────────────────────
+2. PALETA DE COLORES
+───────────────────────────────────────────────────────────────────────
+
+Todas las variables están definidas en css/main.css bajo :root {}
+
+AZULES / NAVY (fondos oscuros, secciones principales)
+─────────────────────────────────────────────────────
+  --color-navy:         #0a1628   ← Fondo principal oscuro
+  --color-navy-mid:     #162340   ← Variante media (stats strip)
+  --color-navy-deep:    #060f1c   ← Footer (el más oscuro)
+  --color-navy-glass:   rgba(10,22,40,0.85)  ← Nav con blur
+
+DORADO (acento, CTAs, highlights)
+──────────────────────────────────
+  --color-gold:         #b8963e   ← Gold primario (botones, divider)
+  --color-gold-light:   #d4af6a   ← Gold claro (textos sobre navy)
+  --color-gold-pale:    #f0e4c8   ← Gold muy suave (fondos, avatares)
+  --color-gold-alpha-15: rgba(184,150,62,0.15)  ← Fondos sutiles
+  --color-gold-alpha-30: rgba(184,150,62,0.30)  ← Bordes suaves
+  --color-gold-alpha-40: rgba(184,150,62,0.40)  ← Bordes en hover
+
+IVORY / CLARO (fondos de página)
+─────────────────────────────────
+  --color-ivory:        #faf8f4   ← Fondo base del sitio
+  --color-ivory-dark:   #f2ede4   ← Ivory más oscuro (callouts)
+  --color-white:        #ffffff   ← Cards, formularios
+
+AZUL MEDIO (gradientes, accentos secundarios)
+─────────────────────────────────────────────
+  --color-blue-accent:  #1d4070
+  --color-blue-light:   #2d6aad
+
+TEXTO
+─────
+  --color-slate:        #4a5568   ← Texto cuerpo (párrafos)
+  --color-slate-light:  #718096   ← Texto secundario, metadatos
+  --color-border:       #e2d9c8   ← Bordes en fondos claros
+  --color-border-dark:  rgba(255,255,255,0.10)  ← Bordes sobre navy
+
+ESTADOS
+───────
+  --color-success:      #2d7a5a
+  --color-error:        #c0392b
+  --color-info:         #1d4070
+
+Regla de uso:
+  - Fondos de sección alternando: ivory → white → navy → navy-mid
+  - Texto sobre ivory/white: --color-navy (títulos) + --color-slate (párrafos)
+  - Texto sobre navy: --color-white (títulos) + rgba(255,255,255,0.60) (párrafos)
+  - CTAs siempre en --color-gold sobre fondo navy o ivory
+
+───────────────────────────────────────────────────────────────────────
+3. TIPOGRAFÍA
+───────────────────────────────────────────────────────────────────────
+
+DISPLAY: Playfair Display (Google Fonts)
+  ├── Weights usados: 400 (regular), 500, 600, 700
+  ├── Italic: 400i, 600i
+  └── Uso: h1, h2, h3, h4, .nav-logo, .footer-logo, .blog-card-title,
+            números grandes (.stat-num, .hero-stat__num)
+
+BODY: Outfit (Google Fonts)
+  ├── Weights usados: 300, 400, 500, 600, 700
+  └── Uso: párrafos, botones, labels, navegación, badges
+
+Escala tipográfica (definida como variables en main.css):
+  --text-xs:   11px   → labels, badges, meta, breadcrumbs
+  --text-sm:   13px   → botones, notas al pie, items de footer
+  --text-base: 16px   → párrafos estándar
+  --text-lg:   18px   → lead, intro destacada
+  --text-xl:   20px   → h4 pequeños
+  --text-2xl:  24px   → subtítulos secundarios
+  --text-3xl:  30px   → títulos de sección en móvil
+  --text-4xl:  36px   → h2
+  --text-5xl:  48px   → h1
+
+Line heights:
+  --leading-tight:  1.15  → títulos display
+  --leading-snug:   1.40  → subtítulos, badges
+  --leading-base:   1.60  → body normal
+  --leading-loose:  1.80  → párrafos de lectura larga
+
+Tracking:
+  --tracking-widest: 0.18em → eyebrow labels (kategorie)
+  --tracking-wider:  0.10em → badges, botones
+  --tracking-wide:   0.05em → nav links
+
+───────────────────────────────────────────────────────────────────────
+4. ESPACIADO (base 8px grid)
+───────────────────────────────────────────────────────────────────────
+
+  --space-1:  8px
+  --space-2: 16px
+  --space-3: 24px
+  --space-4: 32px
+  --space-5: 40px
+  --space-6: 48px
+  --space-8: 64px
+  --space-10: 80px
+  --space-12: 96px
+  --space-16: 160px
+
+Regla: nunca usar valores de px fijos directamente en los componentes.
+Usar siempre las variables --space-N o combinaciones como:
+  padding: var(--space-2) var(--space-4);
+
+───────────────────────────────────────────────────────────────────────
+5. ICONOS
+───────────────────────────────────────────────────────────────────────
+
+Librería: Bootstrap Icons v1.x
+CDN: https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css
+
+Uso básico: <i class="bi bi-telephone"></i>
+Con clase de tamaño: <i class="bi bi-envelope icon--md"></i>
+En icon-box: <span class="icon-box icon-box--gold"><i class="bi bi-star"></i></span>
+
+Iconos utilizados frecuentemente en el proyecto:
+  bi-telephone          → Teléfono
+  bi-envelope           → Email
+  bi-geo-alt            → Dirección
+  bi-calendar3          → Fechas / matrícula
+  bi-clock              → Horarios
+  bi-check-circle-fill  → Éxito, validaciones
+  bi-exclamation-circle → Alertas / error
+  bi-info-circle        → Información
+  bi-lightbulb          → Consejo / callout
+  bi-arrow-right        → CTA links
+  bi-chevron-up         → Scroll to top
+  bi-plus               → FAQ acordeón
+  bi-graduation-cap     → Programas académicos
+  bi-microscope         → Prácticas / investigación
+  bi-people             → Equipo / alumnos
+  bi-award              → Certificaciones
+  bi-building           → Clínicas
+  bi-whatsapp           → WhatsApp
+
+Regla: NO usar emojis en el código. Siempre Bootstrap Icons.
+Excepción: testimonios donde se quiera un toque humano (revisar con diseño).
+
+───────────────────────────────────────────────────────────────────────
+6. ESTRUCTURA DE ARCHIVOS CSS
+───────────────────────────────────────────────────────────────────────
+
+css/
+├── main.css          ← Design tokens · Reset · Tipografía · Layout · Grid · Utilidades
+├── components.css    ← Componentes reutilizables (nav, footer, btn, card, alert,
+│                        badge, form, FAQ, stats, testimonials, clinic logos,
+│                        page-header, cookie banner, scroll-top)
+├── animations.css    ← Keyframes · Reveal on scroll · Micro-interacciones
+└── pages/
+    ├── home.css      ← index.html
+    ├── servicios.css ← servicios.html
+    ├── nosotros.css  ← nosotros.html
+    ├── contacto.css  ← contacto.html
+    ├── blog.css      ← blog/index.html + blog/post-*.html
+    ├── legal.css     ← legal/aviso-legal.html, privacidad.html, cookies.html
+    └── error.css     ← 404.html
+
+Orden de <link> en el <head> de cada HTML:
+  1. Bootstrap Icons (CDN)
+  2. css/main.css
+  3. css/components.css
+  4. css/animations.css
+  5. css/pages/[nombre-pagina].css
+
+───────────────────────────────────────────────────────────────────────
+7. ESTRUCTURA DE ARCHIVOS DEL PROYECTO
+───────────────────────────────────────────────────────────────────────
+
+estemia/
+├── index.html
+├── servicios.html
+├── nosotros.html
+├── contacto.html
+├── 404.html
+├── css/
+│   ├── main.css
+│   ├── components.css
+│   ├── animations.css
+│   └── pages/
+│       ├── home.css
+│       ├── servicios.css
+│       ├── nosotros.css
+│       ├── contacto.css
+│       ├── blog.css
+│       ├── legal.css
+│       └── error.css
+├── js/
+│   └── main.js
+├── assets/
+│   └── img/
+│       ├── [32 imágenes del cliente]
+│       └── Logo-UCAM.png
+├── blog/
+│   ├── index.html
+│   ├── post-1.html    ← Cómo elegir un máster (lorem)
+│   ├── post-2.html    ← Prácticas One to One (lorem)
+│   └── post-3.html    ← Salidas profesionales (lorem)
+└── legal/
+    ├── aviso-legal.html
+    ├── privacidad.html
+    └── cookies.html
+
+───────────────────────────────────────────────────────────────────────
+8. COMPONENTES REUTILIZABLES (mínimo 5 exigidos)
+───────────────────────────────────────────────────────────────────────
+
+1. BOTONES (.btn)
+   Variantes: --primary, --secondary, --outline, --ghost
+   Tamaños:   --sm, --lg, --full
+   Estado:    :disabled / [aria-disabled]
+
+2. CARDS (.card)
+   Variantes: .card (light), .card--dark (sobre navy)
+   Sub-partes: .card__image, .card__body
+
+3. ALERTAS (.alert)
+   Variantes: --success, --error, --info, --gold
+
+4. BADGES (.badge)
+   Variantes: --gold, --navy, --white, --green
+
+5. FORMULARIOS (.form-control)
+   Estados:   :focus, .is-invalid, .is-valid, :disabled
+   Partes:    .form-group, .form-label, .form-error, .form-checkbox
+
+6. FAQ ACORDEÓN (.faq-item)
+   State JS: .is-open
+
+7. ICON BOXES (.icon-box)
+   Variantes: --gold, --navy, --white, --error
+
+───────────────────────────────────────────────────────────────────────
+9. ANIMACIONES
+───────────────────────────────────────────────────────────────────────
+
+Scroll reveal: añadir clase .reveal al elemento en HTML.
+El JS (IntersectionObserver) añade .is-visible cuando entra en pantalla.
+
+Variantes de reveal:
+  .reveal           → fade + subida desde abajo
+  .reveal--right    → fade + entrada desde la izquierda
+  .reveal--left     → fade + entrada desde la derecha
+  .reveal--scale    → fade + escala desde 0.94
+
+Animaciones inmediatas (hero, primer fold):
+  .animate-fade-up, .animate-fade-right, .animate-scale-in
+  + clases de delay: .delay-1 a .delay-5
+
+Regla: respetar prefers-reduced-motion. El archivo animations.css
+ya incluye el media query que desactiva todas las animaciones.
+
+───────────────────────────────────────────────────────────────────────
+10. RESPONSIVE BREAKPOINTS
+───────────────────────────────────────────────────────────────────────
+
+Mobile-first: estilos base para móvil, luego min-width.
+
+  @media (max-width: 1024px)  → tablets grandes / laptops pequeños
+  @media (max-width: 768px)   → tablets / móviles grandes
+  @media (max-width: 640px)   → móviles medianos
+  @media (max-width: 480px)   → móviles estándar
+  @media (max-width: 360px)   ← mínimo soportado (reduce spacing)
+
+El menú hamburguesa se activa a partir de 768px.
+
+───────────────────────────────────────────────────────────────────────
+11. ACCESIBILIDAD
+───────────────────────────────────────────────────────────────────────
+
+▸ Todo elemento interactivo tiene :focus-visible estilizado.
+▸ Imágenes con alt descriptivo siempre.
+▸ Formularios con aria-required, aria-describedby, aria-invalid.
+▸ Menú móvil con role="dialog" y focus trap.
+▸ FAQ con aria-expanded en cada trigger.
+▸ Landmarks semánticos: <header>, <nav>, <main>, <section>,
+  <article>, <footer> en todas las páginas.
+▸ .visually-hidden para contenido solo de lectores de pantalla.
+
+───────────────────────────────────────────────────────────────────────
+12. PENDIENTE
+───────────────────────────────────────────────────────────────────────
+
+▸ Contenido real de los 3 posts del blog (ahora en lorem ipsum)
+▸ Integrar logo Estemia real cuando esté disponible
+▸ Añadir meta og:image específica por página para redes sociales
+▸ Revisar copy con cliente antes de publicar
+▸ Precio exacto de los programas (contacto.html ya tiene formulario)
+▸ Google Maps API key para mapa real en contacto.html
+▸ Google Analytics / Meta Pixel ID reales en política de cookies
+▸ Revisar textos legales con abogado (aviso legal, privacidad)
+▸ SEO: revisar meta descriptions página a página
+
+───────────────────────────────────────────────────────────────────────
+
+Todo lo anterior está documentado en el Word y trasladado a Figma.
+Cuando esté todo pulido del todo, revisa el resultado final del sitio
+antes de enviar a producción.
+
+¡Cualquier duda, mira primero aquí antes de tocar el código!
+
+═══════════════════════════════════════════════════════════════════════

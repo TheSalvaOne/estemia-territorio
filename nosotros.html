@@ -3,130 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Conoce Auramed — nuestra historia, valores y el equipo que hace posible la mejor formación en Medicina Estética. Partner oficial UCAM.">
-  <title>Sobre Nosotros | Auramed</title>
+  <meta name="description" content="Conoce Estemia — nuestra historia, valores y el equipo que hace posible la mejor formación en Medicina Estética. Partner oficial UCAM.">
+  <title>Sobre Nosotros | Estemia</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/main.css">
-  <style>
-    .value-card { padding: 32px; border-radius: 12px; border: 1px solid var(--border); background: var(--white); text-align: center; transition: all 0.25s; }
-    .value-card:hover { box-shadow: var(--shadow-md); border-color: var(--gold-pale); transform: translateY(-2px); }
-    .value-icon { font-size: 2.2rem; margin-bottom: 16px; display: block; }
-    .value-card h3 { font-size: 1.1rem; margin-bottom: 8px; color: var(--navy); }
-    .value-card p { font-size: 0.88rem; }
-
-    .team-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; text-align: center; box-shadow: var(--shadow-sm); }
-    .team-img { height: 200px; background: var(--navy); display: flex; align-items: center; justify-content: center; }
-    .team-initials { font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 700; color: var(--gold-light); }
-    .team-body { padding: 24px; }
-    .team-body h3 { font-size: 1.15rem; margin-bottom: 4px; }
-    .team-body .role { color: var(--gold); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
-    .team-body p { font-size: 0.85rem; }
-
-    .timeline-item { display: flex; gap: 24px; margin-bottom: 32px; }
-    .timeline-year { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; color: var(--gold); min-width: 60px; padding-top: 2px; }
-    .timeline-content h4 { color: var(--navy); margin-bottom: 6px; }
-    .timeline-content p { font-size: 0.88rem; }
-
-    .ucam-block { background: var(--navy); border-radius: 12px; padding: 48px; position: relative; overflow: hidden; }
-    .ucam-block::before { content:''; position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 30% 50%,rgba(45,106,173,0.2) 0%,transparent 60%);pointer-events:none; }
-    .ucam-grid-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; position: relative; z-index: 1; }
-
-    .testimony-card { background: var(--navy-mid); border: 1px solid rgba(184,150,62,0.2); border-radius: 12px; padding: 28px; }
-    .testimony-card .t-text { color: rgba(255,255,255,0.75); font-style: italic; font-size: 0.92rem; line-height: 1.7; margin-bottom: 20px; }
-    .t-author { display: flex; align-items: center; gap: 12px; }
-    .t-avatar { width: 44px; height: 44px; background: var(--gold-alpha); border: 2px solid rgba(184,150,62,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-weight: 700; color: var(--gold-light); font-size: 1rem; flex-shrink: 0; }
-    .t-name { color: var(--white); font-weight: 600; font-size: 0.88rem; }
-    .t-role { color: rgba(255,255,255,0.45); font-size: 0.75rem; }
-
-    @media (max-width: 768px) {
-      .ucam-grid-inner { grid-template-columns: 1fr; }
-      .ucam-block { padding: 32px 24px; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages/nosotros.css">
 </head>
 <body>
-
-<!-- NAV -->
 <nav id="main-nav" role="navigation" aria-label="Navegación principal">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Aura<span>med</span></a>
-    <div class="nav-links">
-      <a href="index.html">Inicio</a>
-      <a href="servicios.html">Programas</a>
-      <a href="nosotros.html" class="active">Nosotros</a>
-      <a href="blog/index.html">Blog</a>
-      <a href="contacto.html">Contacto</a>
-    </div>
-    <a href="contacto.html" class="btn btn-primary btn-sm nav-cta">Reservar plaza</a>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <a href="index.html" class="nav-logo">Esti<span>mia</span></a>
+    <div class="nav-links"><a href="index.html">Inicio</a><a href="servicios.html">Programas</a><a href="nosotros.html" class="is-active">Nosotros</a><a href="blog/index.html">Blog</a><a href="contacto.html">Contacto</a></div>
+    <a href="contacto.html" class="btn btn--primary btn--sm nav-cta">Reservar plaza</a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="nav-mobile" id="nav-mobile">
-  <a href="index.html">Inicio</a>
-  <a href="servicios.html">Programas</a>
-  <a href="nosotros.html">Nosotros</a>
-  <a href="blog/index.html">Blog</a>
-  <a href="contacto.html">Contacto</a>
-  <a href="contacto.html" class="btn btn-primary btn-lg">Reservar plaza</a>
+  <a href="index.html">Inicio</a><a href="servicios.html">Programas</a><a href="nosotros.html">Nosotros</a><a href="blog/index.html">Blog</a><a href="contacto.html">Contacto</a>
+  <a href="contacto.html" class="btn btn--primary btn--lg">Reservar plaza</a>
 </div>
 
 <main id="main-content">
-
-<!-- PAGE HEADER -->
-<header class="page-header" aria-labelledby="nosotros-title">
+<header class="page-header">
   <div class="container">
-    <nav class="page-breadcrumb" aria-label="Ruta de navegación">
-      <a href="index.html">Inicio</a> <span>›</span> <span>Sobre nosotros</span>
-    </nav>
-    <span class="eyebrow" style="color:var(--gold-light);">Quiénes somos</span>
-    <h1 id="nosotros-title" style="margin-top:8px;">Auramed · Una Escuela Construida desde la Clínica</h1>
+    <nav class="page-breadcrumb"><a href="index.html">Inicio</a> <span>›</span> <span>Sobre nosotros</span></nav>
+    <span class="eyebrow" style="color:var(--color-gold-light);">Quiénes somos</span>
+    <h1 style="margin-top:var(--space-1);">Estemia · Una Escuela Construida desde la Clínica</h1>
     <p>No somos una plataforma de cursos. Somos profesionales de la medicina estética que decidieron construir la formación que a nosotros nos hubiera gustado tener.</p>
   </div>
 </header>
 
-<!-- ═══ HISTORIA ═══ -->
-<section style="background:var(--white);" aria-labelledby="historia-heading">
+<!-- HISTORIA -->
+<section style="background:var(--color-white);">
   <div class="container">
-    <div class="grid-2" style="align-items:center; gap:64px;">
+    <div class="grid-2" style="align-items:start; gap:var(--space-8);">
       <div class="reveal">
         <span class="eyebrow">Nuestra historia</span>
-        <div class="divider-gold"></div>
-        <h2 id="historia-heading">Nacidos de la Necesidad de una Formación Real</h2>
-        <p style="margin-bottom:20px;">Auramed nació de una pregunta simple: ¿por qué existe tanta formación en Medicina Estética y tan pocos médicos bien preparados para ejercer desde el primer día?</p>
-        <p style="margin-bottom:20px;">La respuesta era clara: los programas existentes priorizaban la cantidad de alumnos sobre la calidad de la formación. Grupos masificados, prácticas de observación y títulos sin reconocimiento real creaban la ilusión de estar preparado.</p>
-        <p>Fundada como partner de la <strong>Universidad Católica de Murcia (UCAM)</strong>, Auramed nació con una convicción: la única forma de aprender medicina estética de verdad es hacerla, no verla. Por eso apostamos por la metodología <strong>One to One</strong> desde el primer día.</p>
+        <hr class="divider-gold">
+        <h2>Nacidos de la Necesidad de una Formación Real</h2>
+        <p style="margin-bottom:var(--space-3);">Estemia nació de una pregunta simple: ¿por qué existe tanta formación en Medicina Estética y tan pocos médicos bien preparados para ejercer desde el primer día?</p>
+        <p style="margin-bottom:var(--space-3);">La respuesta era clara: los programas existentes priorizaban la cantidad de alumnos sobre la calidad de la formación. Grupos masificados, prácticas de observación y títulos sin reconocimiento real creaban la ilusión de estar preparado.</p>
+        <p>Fundada como partner de la <strong>Universidad Católica de Murcia (UCAM)</strong>, Estemia nació con una convicción: la única forma de aprender medicina estética de verdad es hacerla, no verla. Por eso apostamos por la metodología <strong>One to One</strong> desde el primer día.</p>
       </div>
       <div class="reveal">
-        <div style="background:var(--ivory); border:1px solid var(--border); border-radius:12px; padding:36px;">
-          <h3 style="margin-bottom:28px; font-size:1.3rem;">Nuestra trayectoria</h3>
+        <div style="background:var(--color-ivory); border:1px solid var(--color-border); border-radius:var(--radius-lg); padding:var(--space-5);">
+          <h3 style="margin-bottom:var(--space-4); font-size:1.3rem;">Nuestra trayectoria</h3>
           <div class="timeline-item">
             <div class="timeline-year">2018</div>
-            <div class="timeline-content">
-              <h4>Fundación y primer acuerdo con UCAM</h4>
-              <p>Primer programa de Medicina Estética acreditado con créditos ECTS. 12 alumnos en la primera promoción.</p>
-            </div>
+            <div class="timeline-content"><h4>Fundación y primer acuerdo con UCAM</h4><p>Primer programa de Medicina Estética acreditado con créditos ECTS. 12 alumnos en la primera promoción.</p></div>
           </div>
           <div class="timeline-item">
             <div class="timeline-year">2020</div>
-            <div class="timeline-content">
-              <h4>Implantación de la metodología One to One</h4>
-              <p>Incorporamos las prácticas individualizadas como estándar en todos los programas semipresenciales.</p>
-            </div>
+            <div class="timeline-content"><h4>Implantación de la metodología One to One</h4><p>Incorporamos las prácticas individualizadas como estándar en todos los programas semipresenciales.</p></div>
           </div>
           <div class="timeline-item">
             <div class="timeline-year">2022</div>
-            <div class="timeline-content">
-              <h4>Expansión a Tricología y Cirugía Capilar</h4>
-              <p>Lanzamos los primeros programas especializados en trasplante capilar con título UCAM.</p>
-            </div>
+            <div class="timeline-content"><h4>Expansión a Tricología y Cirugía Capilar</h4><p>Lanzamos los primeros programas especializados en trasplante capilar con título UCAM.</p></div>
           </div>
           <div class="timeline-item" style="margin-bottom:0;">
             <div class="timeline-year">2025</div>
-            <div class="timeline-content">
-              <h4>Más de 500 titulados · Rebrand a Auramed</h4>
-              <p>Más de 20 clínicas partner y el 89% de nuestros titulados ejerciendo en su especialidad.</p>
-            </div>
+            <div class="timeline-content"><h4>Más de 500 titulados · Rebrand a Estemia</h4><p>Más de 20 clínicas partner y el 89% de nuestros titulados ejerciendo en su especialidad.</p></div>
           </div>
         </div>
       </div>
@@ -134,66 +72,98 @@
   </div>
 </section>
 
-<!-- ═══ VALORES ═══ -->
-<section style="background:var(--ivory);" aria-labelledby="valores-heading">
+<!-- VALORES -->
+<section style="background:var(--color-ivory);" aria-labelledby="valores-heading">
   <div class="container">
     <div class="section-header text-center reveal">
       <span class="eyebrow">Lo que nos guía</span>
-      <div class="divider-gold"></div>
+      <hr class="divider-gold">
       <h2 id="valores-heading">Nuestros Valores</h2>
-      <p>Cada decisión en Auramed, desde el diseño del programa hasta la selección de clínicas partner, responde a estos principios.</p>
+      <p>Cada decisión en Estemia, desde el diseño del programa hasta la selección de clínicas partner, responde a estos principios.</p>
     </div>
     <div class="grid-4">
-      <div class="value-card reveal"><span class="value-icon">🏆</span><h3>Excelencia clínica</h3><p>Nuestros contenidos son elaborados e impartidos por expertos de reconocido prestigio en activo.</p></div>
-      <div class="value-card reveal"><span class="value-icon">🔬</span><h3>Evidencia científica</h3><p>Promovemos el aprendizaje basado en evidencia científica actualizada, no en tendencias sin respaldo.</p></div>
-      <div class="value-card reveal"><span class="value-icon">🤝</span><h3>Transparencia total</h3><p>Precios claros, condiciones por escrito y comunicación directa. Sin letra pequeña, sin sorpresas.</p></div>
-      <div class="value-card reveal"><span class="value-icon">♻️</span><h3>Sostenibilidad</h3><p>Docencia 100% digital, sin papel, neutros en carbono. Innovación docente y responsabilidad ambiental.</p></div>
-      <div class="value-card reveal"><span class="value-icon">👤</span><h3>Atención individual</h3><p>Prácticas One to One y soporte académico personalizado. No eres un número en nuestra plataforma.</p></div>
-      <div class="value-card reveal"><span class="value-icon">📈</span><h3>Empleabilidad real</h3><p>El 89% de nuestros titulados ejercen en la especialidad para la que se formaron.</p></div>
-      <div class="value-card reveal"><span class="value-icon">🌍</span><h3>Validez internacional</h3><p>Títulos reconocidos en el Espacio Europeo de Educación Superior y en procesos de homologación internacionales.</p></div>
-      <div class="value-card reveal"><span class="value-icon">🕐</span><h3>Flexibilidad real</h3><p>Matrícula abierta 365 días. Pago por módulos. Tu formación se adapta a tu vida, no al revés.</p></div>
+      <div class="value-card reveal">
+        <div class="value-icon"><i class="bi bi-trophy icon--lg"></i></div>
+        <h3>Excelencia clínica</h3>
+        <p>Contenidos elaborados e impartidos por expertos en activo de reconocido prestigio.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon"><i class="bi bi-journal-medical icon--lg"></i></div>
+        <h3>Evidencia científica</h3>
+        <p>Aprendizaje basado en evidencia actualizada, no en tendencias sin respaldo.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon"><i class="bi bi-shield-check icon--lg"></i></div>
+        <h3>Transparencia total</h3>
+        <p>Precios claros, condiciones por escrito y comunicación directa. Sin letra pequeña.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon"><i class="bi bi-recycle icon--lg"></i></div>
+        <h3>Sostenibilidad</h3>
+        <p>Docencia 100% digital, sin papel, neutros en carbono. Innovación y responsabilidad.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon"><i class="bi bi-person-heart icon--lg"></i></div>
+        <h3>Atención individual</h3>
+        <p>Prácticas One to One y soporte académico personalizado. No eres un número.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon"><i class="bi bi-graph-up-arrow icon--lg"></i></div>
+        <h3>Empleabilidad real</h3>
+        <p>El 89% de nuestros titulados ejercen en la especialidad para la que se formaron.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon"><i class="bi bi-globe-europe-africa icon--lg"></i></div>
+        <h3>Validez internacional</h3>
+        <p>Títulos reconocidos en el Espacio Europeo de Educación Superior.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon"><i class="bi bi-hourglass-split icon--lg"></i></div>
+        <h3>Flexibilidad real</h3>
+        <p>Matrícula abierta 365 días. Tu formación se adapta a tu vida, no al revés.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ UCAM ═══ -->
-<section aria-labelledby="ucam-heading" id="ucam">
+<!-- UCAM -->
+<section id="ucam">
   <div class="container">
     <div class="ucam-block reveal">
       <div class="ucam-grid-inner">
         <div>
-          <span class="eyebrow" style="color:var(--gold-light);">Respaldo universitario</span>
-          <div class="divider-gold"></div>
-          <h2 id="ucam-heading" style="color:var(--white); margin-bottom:16px;">UCAM: Una Universidad Real, No una Plataforma Digital</h2>
-          <p style="color:rgba(255,255,255,0.7); margin-bottom:20px;">La Universidad Católica de Murcia es una institución universitaria privada con más de 25 años de historia, campus físico en Murcia y reconocimiento por el Ministerio de Universidades de España.</p>
-          <ul style="list-style:none; display:flex; flex-direction:column; gap:10px;">
-            <li style="display:flex;gap:10px;align-items:flex-start;color:rgba(255,255,255,0.7);font-size:0.88rem;"><span style="color:var(--gold);font-weight:700;">✓</span> Títulos con créditos ECTS válidos en el Espacio Europeo de Educación Superior</li>
-            <li style="display:flex;gap:10px;align-items:flex-start;color:rgba(255,255,255,0.7);font-size:0.88rem;"><span style="color:var(--gold);font-weight:700;">✓</span> Reconocimiento del Ministerio de Universidades de España</li>
-            <li style="display:flex;gap:10px;align-items:flex-start;color:rgba(255,255,255,0.7);font-size:0.88rem;"><span style="color:var(--gold);font-weight:700;">✓</span> Aceptados en colegiación médica y procesos de homologación internacionales</li>
-            <li style="display:flex;gap:10px;align-items:flex-start;color:rgba(255,255,255,0.7);font-size:0.88rem;"><span style="color:var(--gold);font-weight:700;">✓</span> Auramed es partner académico oficial de la UCAM para estos programas</li>
+          <span class="eyebrow" style="color:var(--color-gold-light);">Respaldo universitario</span>
+          <hr class="divider-gold">
+          <h2 class="text-white" style="margin-bottom:var(--space-2);">UCAM: Una Universidad Real, No una Plataforma Digital</h2>
+          <p style="color:rgba(255,255,255,0.65); margin-bottom:var(--space-3);">La Universidad Católica de Murcia es una institución universitaria privada con más de 25 años de historia, campus físico en Murcia y reconocimiento por el Ministerio de Universidades de España.</p>
+          <ul class="ucam-check-list">
+            <li><i class="bi bi-check-circle-fill"></i>Títulos con créditos ECTS válidos en el Espacio Europeo de Educación Superior</li>
+            <li><i class="bi bi-check-circle-fill"></i>Reconocimiento del Ministerio de Universidades de España</li>
+            <li><i class="bi bi-check-circle-fill"></i>Aceptados en colegiación médica y homologaciones internacionales</li>
+            <li><i class="bi bi-check-circle-fill"></i>Estemia es partner académico oficial de la UCAM</li>
           </ul>
         </div>
-        <div style="text-align:center;">
-          <img src="assets/img/Logo-UCAM.png" alt="Logo Universidad Católica de Murcia UCAM" style="max-height:80px; margin:0 auto 24px; filter:brightness(0) invert(1); opacity:0.9;">
-          <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(184,150,62,0.3);border-radius:12px;padding:28px;">
-            <div style="font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:700;color:var(--gold-light);line-height:1;">90</div>
-            <div style="color:rgba(255,255,255,0.5);font-size:0.8rem;margin-top:4px;">Créditos ECTS máximos · Máster Semipresencial</div>
+        <div class="text-center">
+          <img src="assets/img/Logo-UCAM.png" alt="Logo Universidad Católica de Murcia UCAM" style="max-height:80px; margin:0 auto var(--space-4); filter:brightness(0) invert(1); opacity:0.85;">
+          <div style="background:rgba(255,255,255,0.06); border:1px solid var(--color-gold-alpha-30); border-radius:var(--radius-lg); padding:var(--space-4);">
+            <div style="font-family:var(--font-display);font-size:4.5rem;font-weight:700;color:var(--color-gold-light);line-height:1;">90</div>
+            <div style="color:rgba(255,255,255,0.45);font-size:var(--text-sm);margin-top:4px;">Créditos ECTS máximos · Máster Semipresencial</div>
           </div>
-          <a href="https://www.ucam.edu/estudios/partners/territorio-master-sl" target="_blank" rel="noopener" class="btn btn-secondary" style="margin-top:20px;">Verificar partnership UCAM ↗</a>
+          <a href="https://www.ucam.edu/" target="_blank" rel="noopener" class="btn btn--secondary" style="margin-top:var(--space-3);">Verificar partnership UCAM <i class="bi bi-box-arrow-up-right"></i></a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ EQUIPO ═══ -->
-<section style="background:var(--white);" aria-labelledby="equipo-heading">
+<!-- EQUIPO -->
+<section style="background:var(--color-white);" aria-labelledby="equipo-heading">
   <div class="container">
     <div class="section-header text-center reveal">
       <span class="eyebrow">Claustro académico</span>
-      <div class="divider-gold"></div>
-      <h2 id="equipo-heading">¿Por Qué Confiar en Auramed?</h2>
-      <p>Nuestro claustro está integrado por profesionales clínicos en activo, jefes de servicio de hospitales madrileños y profesores universitarios con trayectoria investigadora contrastada.</p>
+      <hr class="divider-gold">
+      <h2 id="equipo-heading">¿Por Qué Confiar en Estemia?</h2>
+      <p>Nuestro claustro está integrado por profesionales clínicos en activo, jefes de servicio y profesores universitarios con trayectoria investigadora contrastada.</p>
     </div>
     <div class="grid-3">
       <div class="team-card reveal">
@@ -205,7 +175,7 @@
         </div>
       </div>
       <div class="team-card reveal">
-        <div class="team-img" style="background:var(--blue-med);"><div class="team-initials">CJ</div></div>
+        <div class="team-img" style="background:var(--color-blue-accent);"><div class="team-initials">CM</div></div>
         <div class="team-body">
           <h3>Cuerpo Docente Médico</h3>
           <div class="role">Especialistas en Activo</div>
@@ -213,117 +183,65 @@
         </div>
       </div>
       <div class="team-card reveal">
-        <div class="team-img" style="background:var(--gold); "><div class="team-initials" style="color:var(--navy);">PU</div></div>
+        <div class="team-img" style="background:var(--color-gold);"><div class="team-initials" style="color:var(--color-navy);">PU</div></div>
         <div class="team-body">
           <h3>Profesores Universitarios</h3>
           <div class="role">Investigación y Docencia</div>
-          <p>Docentes con dilatada carrera académica e investigadora en el ámbito de la medicina estética, el antienvejecimiento y la nutrición clínica.</p>
+          <p>Docentes con dilatada carrera académica e investigadora en medicina estética, antienvejecimiento y nutrición clínica.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ VALORACIONES ═══ -->
-<section style="background:var(--navy);" id="valoraciones" aria-labelledby="valoraciones-heading">
+<!-- VALORACIONES -->
+<section style="background:var(--color-navy);" id="valoraciones">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="eyebrow" style="color:var(--gold-light);">Voces de nuestros alumnos</span>
-      <div class="divider-gold"></div>
-      <h2 id="valoraciones-heading" style="color:var(--white);">El 73% de Nuestros Alumnos Llegan por Recomendación</h2>
-      <p style="color:rgba(255,255,255,0.6);">No construimos esta reputación con publicidad. La construimos con resultados.</p>
+      <span class="eyebrow text-gold">Voces de nuestros alumnos</span>
+      <hr class="divider-gold">
+      <h2 class="text-white">El 73% de Nuestros Alumnos Llegan por Recomendación</h2>
+      <p class="text-muted">No construimos esta reputación con publicidad. La construimos con resultados.</p>
     </div>
     <div class="grid-3">
-      <div class="testimony-card reveal">
-        <p class="t-text">"Las prácticas One to One marcaron la diferencia. El especialista me dedicó su tiempo completo, me corrigió y me enseñó como si fuera su residente personal. Algo así no lo encuentras en ningún otro máster."</p>
-        <div class="t-author">
-          <div class="t-avatar">EA</div>
-          <div><div class="t-name">Eugenio Andrés Puche Urdaneta</div><div class="t-role">Médico · Máster Medicina Estética</div></div>
-        </div>
-        <div class="stars" style="margin-top:12px;">★★★★★</div>
-      </div>
-      <div class="testimony-card reveal">
-        <p class="t-text">"Lo que más valoro es la transparencia. Sabía exactamente lo que iba a pagar, cuándo y cómo. En otros programas me encontré con sorpresas desagradables. Aquí, todo estaba claro desde el primer día."</p>
-        <div class="t-author">
-          <div class="t-avatar">MR</div>
-          <div><div class="t-name">María del Rocío González Montesino</div><div class="t-role">Enfermera · Máster Cirugía Capilar</div></div>
-        </div>
-        <div class="stars" style="margin-top:12px;">★★★★★</div>
-      </div>
-      <div class="testimony-card reveal">
-        <p class="t-text">"La validez del título UCAM fue lo que me decidió. Pude presentarlo en mi proceso de colegiación sin ningún problema. Es un título universitario de verdad, no uno de esos certificados privados sin reconocimiento."</p>
-        <div class="t-author">
-          <div class="t-avatar">IA</div>
-          <div><div class="t-name">Ignacio Agustín Romero</div><div class="t-role">Médico · Máster Semipresencial</div></div>
-        </div>
-        <div class="stars" style="margin-top:12px;">★★★★★</div>
-      </div>
-      <div class="testimony-card reveal">
-        <p class="t-text">"Trabajar con pacientes reales desde el primer día de prácticas fue un nivel completamente diferente. Salí con herramientas concretas, no solo con teoría."</p>
-        <div class="t-author">
-          <div class="t-avatar">SB</div>
-          <div><div class="t-name">Soraya Barrilero Peñuela</div><div class="t-role">Auxiliar · Curso Superior Implantes</div></div>
-        </div>
-        <div class="stars" style="margin-top:12px;">★★★★★</div>
-      </div>
-      <div class="testimony-card reveal">
-        <p class="t-text">"Vine recomendada por mi compañera de promoción. Lo que ella me contó me pareció increíble y pensé que exageraba. Cuando empecé entendí que no exageraba en absoluto. Todo lo que describe es real."</p>
-        <div class="t-author">
-          <div class="t-avatar">RR</div>
-          <div><div class="t-name">Raquel Rivas Vallejo</div><div class="t-role">Enfermera · Máster Semipresencial</div></div>
-        </div>
-        <div class="stars" style="margin-top:12px;">★★★★★</div>
-      </div>
-      <div class="testimony-card reveal">
-        <p class="t-text">"El 89% de empleabilidad no es un dato de marketing. Yo encontré trabajo en una clínica de Madrid tres semanas después de terminar mis prácticas. El título y la formación hablan por sí solos."</p>
-        <div class="t-author">
-          <div class="t-avatar">MA</div>
-          <div><div class="t-name">María Asunción Bugallo Rey</div><div class="t-role">Médica · Máster Medicina Estética</div></div>
-        </div>
-        <div class="stars" style="margin-top:12px;">★★★★★</div>
-      </div>
+      <div class="testimony-card reveal"><p class="testimony-text">"Las prácticas One to One marcaron la diferencia. El especialista me dedicó su tiempo completo, me corrigió y me enseñó como si fuera su residente personal."</p><div class="t-author"><div class="t-avatar">EA</div><div><div class="t-name">Eugenio Andrés Puche</div><div class="t-role">Médico · Máster Medicina Estética</div></div></div><div class="stars" style="margin-top:var(--space-2);">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div>
+      <div class="testimony-card reveal"><p class="testimony-text">"Lo que más valoro es la transparencia. Sabía exactamente lo que iba a pagar, cuándo y cómo. En otros programas me encontré con sorpresas desagradables."</p><div class="t-author"><div class="t-avatar">MR</div><div><div class="t-name">María del Rocío González</div><div class="t-role">Enfermera · Máster Cirugía Capilar</div></div></div><div class="stars" style="margin-top:var(--space-2);">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div>
+      <div class="testimony-card reveal"><p class="testimony-text">"La validez del título UCAM fue lo que me decidió. Pude presentarlo en mi proceso de colegiación sin ningún problema. Es un título universitario de verdad."</p><div class="t-author"><div class="t-avatar">IA</div><div><div class="t-name">Ignacio Agustín Romero</div><div class="t-role">Médico · Máster Semipresencial</div></div></div><div class="stars" style="margin-top:var(--space-2);">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div>
+      <div class="testimony-card reveal"><p class="testimony-text">"Trabajar con pacientes reales desde el primer día de prácticas fue un nivel completamente diferente. Salí con herramientas concretas, no solo con teoría."</p><div class="t-author"><div class="t-avatar">SB</div><div><div class="t-name">Soraya Barrilero Peñuela</div><div class="t-role">Auxiliar · Curso Superior Implantes</div></div></div><div class="stars" style="margin-top:var(--space-2);">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div>
+      <div class="testimony-card reveal"><p class="testimony-text">"Vine recomendada por mi compañera. Lo que ella me contó me pareció increíble. Cuando empecé entendí que no exageraba en absoluto. Todo es real."</p><div class="t-author"><div class="t-avatar">RR</div><div><div class="t-name">Raquel Rivas Vallejo</div><div class="t-role">Enfermera · Máster Semipresencial</div></div></div><div class="stars" style="margin-top:var(--space-2);">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div>
+      <div class="testimony-card reveal"><p class="testimony-text">"El 89% de empleabilidad no es un dato de marketing. Yo encontré trabajo en una clínica de Madrid tres semanas después de terminar mis prácticas."</p><div class="t-author"><div class="t-avatar">MA</div><div><div class="t-name">María Asunción Bugallo Rey</div><div class="t-role">Médica · Máster Medicina Estética</div></div></div><div class="stars" style="margin-top:var(--space-2);">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section style="background:var(--ivory); text-align:center;">
-  <div class="container-sm reveal">
-    <span class="eyebrow">Únete a Auramed</span>
-    <div class="divider-gold" style="margin:16px auto;"></div>
-    <h2 style="margin-bottom:16px;">¿Listo para Construir tu Carrera en Medicina Estética?</h2>
-    <p style="margin-bottom:32px;">Habla con nuestro equipo académico sin compromiso. Te explicamos qué programa encaja con tu perfil y cómo dar el primer paso.</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-      <a href="contacto.html" class="btn btn-primary btn-lg">Solicitar información →</a>
-      <a href="servicios.html" class="btn btn-outline btn-lg">Ver programas</a>
+<section style="background:var(--color-ivory); text-align:center;" class="section--sm">
+  <div class="container--sm reveal">
+    <span class="eyebrow">Únete a Estemia</span>
+    <hr class="divider-gold" style="margin:var(--space-2) auto;">
+    <h2 style="margin-bottom:var(--space-2);">¿Listo para Construir tu Carrera en Medicina Estética?</h2>
+    <p style="margin-bottom:var(--space-4);">Habla con nuestro equipo académico sin compromiso. Te explicamos qué programa encaja con tu perfil y cómo dar el primer paso.</p>
+    <div style="display:flex;gap:var(--space-2);justify-content:center;flex-wrap:wrap;">
+      <a href="contacto.html" class="btn btn--primary btn--lg">Solicitar información <i class="bi bi-arrow-right"></i></a>
+      <a href="servicios.html" class="btn btn--outline btn--lg">Ver programas</a>
     </div>
   </div>
 </section>
-
 </main>
 
-<!-- FOOTER -->
 <footer class="site-footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">
-      <div>
-        <div class="footer-logo">Aura<span>med</span></div>
-        <p class="footer-desc">Escuela de referencia en Medicina Estética, Antienvejecimiento y Nutrición. Partner oficial UCAM.</p>
-        <a href="tel:+34656438139" class="footer-contact-item"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013 5.18 2 2 0 015 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>+34 656 438 139</a>
-        <a href="mailto:info@auramed.es" class="footer-contact-item"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@auramed.es</a>
-      </div>
+      <div><div class="footer-logo">Esti<span>mia</span></div><p class="footer-desc">Escuela de referencia en Medicina Estética, Antienvejecimiento y Nutrición. Partner oficial UCAM.</p><a href="tel:+34656438139" class="footer-contact-item"><i class="bi bi-telephone"></i> +34 656 438 139</a><a href="mailto:info@estemia.es" class="footer-contact-item"><i class="bi bi-envelope"></i> info@estemia.es</a></div>
       <div class="footer-col"><h5>Programas</h5><ul><li><a href="servicios.html#medicina">Medicina Estética</a></li><li><a href="servicios.html#tricologia">Tricología Capilar</a></li><li><a href="servicios.html#enfermeria">Enfermería Capilar</a></li><li><a href="servicios.html#auxiliar">Técnico Auxiliar</a></li></ul></div>
-      <div class="footer-col"><h5>Auramed</h5><ul><li><a href="nosotros.html">Sobre nosotros</a></li><li><a href="servicios.html#practicas">Clínicas partner</a></li><li><a href="blog/index.html">Blog</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+      <div class="footer-col"><h5>Estemia</h5><ul><li><a href="nosotros.html">Sobre nosotros</a></li><li><a href="servicios.html#practicas">Clínicas partner</a></li><li><a href="blog/index.html">Blog</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
       <div class="footer-col"><h5>Legal</h5><ul><li><a href="legal/aviso-legal.html">Aviso legal</a></li><li><a href="legal/privacidad.html">Privacidad</a></li><li><a href="legal/cookies.html">Cookies</a></li></ul></div>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-copy">© 2025 Auramed · Partner académico: UCAM</p>
-      <div class="footer-legal"><a href="legal/aviso-legal.html">Aviso legal</a><a href="legal/privacidad.html">Privacidad</a><a href="legal/cookies.html">Cookies</a></div>
-    </div>
+    <div class="footer-bottom"><p class="footer-copy">&copy; 2025 Estemia &middot; Partner académico: UCAM</p><div class="footer-legal"><a href="legal/aviso-legal.html">Aviso legal</a><a href="legal/privacidad.html">Privacidad</a><a href="legal/cookies.html">Cookies</a></div></div>
   </div>
 </footer>
-<div id="cookie-banner" role="dialog" aria-live="polite"><p>Usamos cookies para mejorar tu experiencia. <a href="legal/cookies.html">Política de cookies</a>.</p><div class="cookie-btns"><button id="cookie-decline" class="btn btn-secondary btn-sm">Rechazar</button><button id="cookie-accept" class="btn btn-primary btn-sm">Aceptar</button></div></div>
-<button id="scroll-top" aria-label="Volver arriba"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg></button>
+<div id="cookie-banner" role="dialog" aria-live="polite"><p>Usamos cookies. <a href="legal/cookies.html">Política de cookies</a>.</p><div class="cookie-btns"><button id="cookie-decline" class="btn btn--secondary btn--sm">Rechazar</button><button id="cookie-accept" class="btn btn--primary btn--sm">Aceptar</button></div></div>
+<button id="scroll-top" aria-label="Volver al inicio"><i class="bi bi-chevron-up"></i></button>
 <script src="js/main.js"></script>
 </body>
 </html>

@@ -3,87 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contacta con Auramed — Solicita información sobre nuestros programas de Medicina Estética. Formulario, teléfono, email y ubicación en Madrid.">
-  <title>Contacto | Auramed</title>
+  <meta name="description" content="Contacta con Estemia — Solicita información sobre nuestros programas. Formulario, teléfono, email y ubicación en Madrid.">
+  <title>Contacto | Estemia</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/main.css">
-  <style>
-    .contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 64px; align-items: start; }
-    .contact-info-block { margin-bottom: 32px; }
-    .contact-info-block h3 { font-size: 1.1rem; margin-bottom: 16px; color: var(--navy); }
-    .contact-item { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; }
-    .contact-icon { width: 44px; height: 44px; background: var(--gold-pale); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .contact-icon svg { color: var(--gold); }
-    .contact-item .c-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--slate-light); margin-bottom: 4px; }
-    .contact-item .c-val { color: var(--navy); font-weight: 500; font-size: 0.95rem; }
-    .contact-item .c-val a { color: var(--navy); transition: color 0.2s; }
-    .contact-item .c-val a:hover { color: var(--gold); }
-
-    .hours-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-    .hour-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
-    .hour-row:last-child { border-bottom: none; }
-    .hour-day { color: var(--slate); }
-    .hour-time { color: var(--navy); font-weight: 600; }
-    .hour-closed { color: var(--slate-light); }
-
-    .form-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 40px; box-shadow: var(--shadow-md); }
-    .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .map-container { border-radius: 12px; overflow: hidden; border: 1px solid var(--border); margin-top: 32px; }
-    .map-container iframe { display: block; width: 100%; height: 280px; border: none; }
-
-    @media (max-width: 900px) {
-      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-    }
-    @media (max-width: 600px) {
-      .form-card { padding: 24px; }
-      .form-grid-2 { grid-template-columns: 1fr; }
-      .hours-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages/contacto.css">
 </head>
 <body>
-
-<!-- NAV -->
 <nav id="main-nav" role="navigation" aria-label="Navegación principal">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Aura<span>med</span></a>
-    <div class="nav-links">
-      <a href="index.html">Inicio</a>
-      <a href="servicios.html">Programas</a>
-      <a href="nosotros.html">Nosotros</a>
-      <a href="blog/index.html">Blog</a>
-      <a href="contacto.html" class="active">Contacto</a>
-    </div>
-    <a href="contacto.html" class="btn btn-primary btn-sm nav-cta">Reservar plaza</a>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <a href="index.html" class="nav-logo">Esti<span>mia</span></a>
+    <div class="nav-links"><a href="index.html">Inicio</a><a href="servicios.html">Programas</a><a href="nosotros.html">Nosotros</a><a href="blog/index.html">Blog</a><a href="contacto.html" class="is-active">Contacto</a></div>
+    <a href="contacto.html" class="btn btn--primary btn--sm nav-cta">Reservar plaza</a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="nav-mobile" id="nav-mobile">
-  <a href="index.html">Inicio</a>
-  <a href="servicios.html">Programas</a>
-  <a href="nosotros.html">Nosotros</a>
-  <a href="blog/index.html">Blog</a>
-  <a href="contacto.html">Contacto</a>
-  <a href="contacto.html" class="btn btn-primary btn-lg">Reservar plaza</a>
+  <a href="index.html">Inicio</a><a href="servicios.html">Programas</a><a href="nosotros.html">Nosotros</a><a href="blog/index.html">Blog</a><a href="contacto.html">Contacto</a>
+  <a href="contacto.html" class="btn btn--primary btn--lg">Reservar plaza</a>
 </div>
 
 <main id="main-content">
-
-<!-- PAGE HEADER -->
-<header class="page-header" aria-labelledby="contacto-title">
+<header class="page-header">
   <div class="container">
-    <nav class="page-breadcrumb" aria-label="Ruta de navegación">
-      <a href="index.html">Inicio</a> <span>›</span> <span>Contacto</span>
-    </nav>
-    <span class="eyebrow" style="color:var(--gold-light);">Estamos aquí</span>
-    <h1 id="contacto-title" style="margin-top:8px;">Hablemos sin Compromiso</h1>
+    <nav class="page-breadcrumb"><a href="index.html">Inicio</a> <span>›</span> <span>Contacto</span></nav>
+    <span class="eyebrow" style="color:var(--color-gold-light);">Estamos aquí</span>
+    <h1 style="margin-top:var(--space-1);">Hablemos sin Compromiso</h1>
     <p>Nuestro equipo académico te explicará qué programa se adapta mejor a tu perfil y responderá todas tus dudas antes de que tomes ninguna decisión.</p>
   </div>
 </header>
 
-<!-- ═══ CONTACTO PRINCIPAL ═══ -->
-<section style="background:var(--ivory);">
+<section style="background:var(--color-ivory);">
   <div class="container">
     <div class="contact-grid">
 
@@ -91,217 +43,133 @@
       <div class="reveal">
         <div class="contact-info-block">
           <h3>Información de contacto</h3>
-
           <div class="contact-item">
-            <div class="contact-icon">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013 5.18 2 2 0 015 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            </div>
-            <div>
-              <div class="c-label">Teléfono</div>
-              <div class="c-val"><a href="tel:+34656438139">+34 656 438 139</a></div>
-            </div>
+            <div class="contact-icon"><i class="bi bi-telephone"></i></div>
+            <div><div class="contact-label">Teléfono</div><a href="tel:+34656438139" class="contact-value">+34 656 438 139</a></div>
           </div>
-
           <div class="contact-item">
-            <div class="contact-icon">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div>
-              <div class="c-label">Email académico</div>
-              <div class="c-val"><a href="mailto:info@auramed.es">info@auramed.es</a></div>
-            </div>
+            <div class="contact-icon"><i class="bi bi-envelope"></i></div>
+            <div><div class="contact-label">Email académico</div><a href="mailto:info@estemia.es" class="contact-value">info@estemia.es</a></div>
           </div>
-
           <div class="contact-item">
-            <div class="contact-icon">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div>
-              <div class="c-label">Dirección</div>
-              <div class="c-val">C/ Torquemada 16<br>28043 Madrid, España</div>
-            </div>
+            <div class="contact-icon"><i class="bi bi-geo-alt"></i></div>
+            <div><div class="contact-label">Dirección</div><div class="contact-value">C/ Torquemada 16<br>28043 Madrid, España</div></div>
           </div>
-
           <div class="contact-item">
-            <div class="contact-icon">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            </div>
-            <div>
-              <div class="c-label">Matrícula</div>
-              <div class="c-val">Abierta 365 días al año</div>
-            </div>
+            <div class="contact-icon"><i class="bi bi-calendar3"></i></div>
+            <div><div class="contact-label">Matrícula</div><div class="contact-value">Abierta 365 días al año</div></div>
           </div>
         </div>
 
         <div class="contact-info-block">
           <h3>Horario de atención</h3>
-          <div class="hour-row"><span class="hour-day">Lunes – Jueves</span><span class="hour-time">09:00 – 19:00</span></div>
-          <div class="hour-row"><span class="hour-day">Viernes</span><span class="hour-time">09:00 – 15:00</span></div>
-          <div class="hour-row"><span class="hour-day">Sábado</span><span class="hour-time">10:00 – 13:00</span></div>
-          <div class="hour-row"><span class="hour-day">Domingo</span><span class="hour-closed">Cerrado</span></div>
-          <p style="font-size:0.78rem; color:var(--slate-light); margin-top:12px;">Las consultas por email se responden en menos de 24 horas laborables.</p>
+          <div class="hours-list">
+            <div class="hour-row"><span class="hour-day">Lunes – Jueves</span><span class="hour-time">09:00 – 19:00</span></div>
+            <div class="hour-row"><span class="hour-day">Viernes</span><span class="hour-time">09:00 – 15:00</span></div>
+            <div class="hour-row"><span class="hour-day">Sábado</span><span class="hour-time">10:00 – 13:00</span></div>
+            <div class="hour-row"><span class="hour-day">Domingo</span><span class="hour-closed">Cerrado</span></div>
+          </div>
+          <p style="font-size:var(--text-xs); color:var(--color-slate-light); margin-top:var(--space-2);">Las consultas por email se responden en menos de 24 horas laborables.</p>
         </div>
 
-        <div class="alert alert-gold">
-          <span class="alert-icon">💡</span>
+        <div class="alert alert--gold">
+          <i class="bi bi-lightbulb-fill alert__icon"></i>
           <span>¿Prefieres que te llamemos nosotros? Déjanos tu número en el formulario y te llamamos en el horario que prefieras.</span>
         </div>
 
-        <!-- Map -->
-        <div class="map-container" style="margin-top:24px;">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.0!2d-3.6680!3d40.4550!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sCalle+Torquemada+16%2C+Madrid!5e0!3m2!1ses!2ses!4v1700000000000"
-            title="Ubicación Auramed · C/ Torquemada 16, Madrid"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.0!2d-3.6680!3d40.4550!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sCalle+Torquemada+16%2C+Madrid!5e0!3m2!1ses!2ses!4v1700000000000" title="Ubicación Estemia en Madrid" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
 
-      <!-- FORM -->
+      <!-- FORMULARIO -->
       <div class="form-card reveal">
-        <h2 style="font-size:1.6rem; margin-bottom:8px;">Solicita Información</h2>
-        <p style="margin-bottom:28px; font-size:0.9rem;">Sin compromiso. Te responderemos en menos de 24 horas.</p>
+        <h2 style="font-size:1.6rem; margin-bottom:var(--space-1);">Solicita Información</h2>
+        <p style="margin-bottom:var(--space-4); font-size:0.9rem;">Sin compromiso. Te responderemos en menos de 24 horas.</p>
 
         <form id="contact-form" data-validate novalidate aria-label="Formulario de contacto">
-          <div class="form-grid-2" style="margin-bottom:16px;">
+          <div class="form-grid-2" style="margin-bottom:var(--space-2);">
             <div class="form-group">
-              <label class="form-label" for="nombre">Nombre <span class="required" aria-hidden="true">*</span></label>
-              <input
-                type="text"
-                id="nombre"
-                name="nombre"
-                class="form-control"
-                placeholder="Tu nombre"
-                autocomplete="given-name"
-                data-rules="required|minlength:2"
-                data-label="El nombre"
-                aria-required="true"
-                aria-describedby="nombre-error">
+              <label class="form-label" for="nombre">Nombre <span class="form-label__required" aria-hidden="true">*</span></label>
+              <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Tu nombre" autocomplete="given-name" data-rules="required|minlength:2" data-label="El nombre" aria-required="true" aria-describedby="nombre-error">
               <span class="form-error" id="nombre-error" role="alert" aria-live="polite"></span>
             </div>
             <div class="form-group">
-              <label class="form-label" for="apellidos">Apellidos <span class="required" aria-hidden="true">*</span></label>
-              <input
-                type="text"
-                id="apellidos"
-                name="apellidos"
-                class="form-control"
-                placeholder="Tus apellidos"
-                autocomplete="family-name"
-                data-rules="required|minlength:2"
-                data-label="Los apellidos"
-                aria-required="true"
-                aria-describedby="apellidos-error">
+              <label class="form-label" for="apellidos">Apellidos <span class="form-label__required" aria-hidden="true">*</span></label>
+              <input type="text" id="apellidos" name="apellidos" class="form-control" placeholder="Tus apellidos" autocomplete="family-name" data-rules="required|minlength:2" data-label="Los apellidos" aria-required="true" aria-describedby="apellidos-error">
               <span class="form-error" id="apellidos-error" role="alert" aria-live="polite"></span>
             </div>
           </div>
 
-          <div class="form-group" style="margin-bottom:16px;">
-            <label class="form-label" for="email">Email <span class="required" aria-hidden="true">*</span></label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="form-control"
-              placeholder="tu@email.com"
-              autocomplete="email"
-              data-rules="required|email"
-              data-label="El email"
-              aria-required="true"
-              aria-describedby="email-error">
+          <div class="form-group" style="margin-bottom:var(--space-2);">
+            <label class="form-label" for="email">Email <span class="form-label__required" aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="tu@email.com" autocomplete="email" data-rules="required|email" data-label="El email" aria-required="true" aria-describedby="email-error">
             <span class="form-error" id="email-error" role="alert" aria-live="polite"></span>
           </div>
 
-          <div class="form-grid-2" style="margin-bottom:16px;">
+          <div class="form-grid-2" style="margin-bottom:var(--space-2);">
             <div class="form-group">
               <label class="form-label" for="telefono">Teléfono</label>
-              <input
-                type="tel"
-                id="telefono"
-                name="telefono"
-                class="form-control"
-                placeholder="+34 600 000 000"
-                autocomplete="tel"
-                data-rules="phone"
-                data-label="El teléfono"
-                aria-describedby="telefono-error">
+              <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="+34 600 000 000" autocomplete="tel" data-rules="phone" data-label="El teléfono" aria-describedby="telefono-error">
               <span class="form-error" id="telefono-error" role="alert" aria-live="polite"></span>
             </div>
             <div class="form-group">
               <label class="form-label" for="perfil">Perfil profesional</label>
-              <select id="perfil" name="perfil" class="form-control" data-rules="" aria-describedby="perfil-error">
+              <select id="perfil" name="perfil" class="form-control" aria-describedby="perfil-error">
                 <option value="">Selecciona tu perfil</option>
-                <option value="grado">Grado Universitario</option>
-                <option value="master">Máster</option>
-                <option value="doctorado">Doctorado</option>
-                <option value="fp">Formación Profesional</option>
+                <option value="medico">Médico / Licenciado en Medicina</option>
+                <option value="enfermero">Enfermero / DUE</option>
+                <option value="auxiliar">Técnico Auxiliar Sanitario</option>
+                <option value="otro">Otro perfil sanitario</option>
               </select>
               <span class="form-error" id="perfil-error" role="alert" aria-live="polite"></span>
             </div>
           </div>
 
-          <div class="form-group" style="margin-bottom:16px;">
-            <label class="form-label" for="programa">Programa de interés <span class="required" aria-hidden="true">*</span></label>
+          <div class="form-group" style="margin-bottom:var(--space-2);">
+            <label class="form-label" for="programa">Programa de interés <span class="form-label__required" aria-hidden="true">*</span></label>
             <select id="programa" name="programa" class="form-control" data-rules="required" data-label="El programa" aria-required="true" aria-describedby="programa-error">
               <option value="">Selecciona un programa</option>
-              <option value="master-estetica-semi">Máster Medicina Estética, Antienvejecimiento y Nutrición (Semipresencial)</option>
+              <option value="master-estetica-semi">Máster Medicina Estética (Semipresencial)</option>
               <option value="master-estetica-online">Máster Medicina Estética (Online)</option>
-              <option value="master-trico-semi">Máster Tricología y Cirugía Capilar (Semipresencial)</option>
-              <option value="master-trico-online">Máster Tricología y Cirugía Capilar (Online)</option>
-              <option value="master-enf-semi">Máster Cirugía Capilar en Enfermería (Semipresencial)</option>
-              <option value="experto-enf-online">Experto Universitario Enfermería · Cirugía Capilar (Online)</option>
-              <option value="aux-semi">Curso Superior Auxiliar · Implantes Capilares (Semipresencial)</option>
-              <option value="aux-online">Curso Superior Auxiliar · Implantes Capilares (Online)</option>
-              <option value="otro">No lo tengo claro aún · Quiero orientación</option>
+              <option value="master-trico-semi">Máster Tricología (Semipresencial)</option>
+              <option value="master-trico-online">Máster Tricología (Online)</option>
+              <option value="master-enf-semi">Máster Enfermería Capilar (Semipresencial)</option>
+              <option value="experto-enf-online">Experto Universitario Enfermería (Online)</option>
+              <option value="aux-semi">Curso Auxiliar (Semipresencial)</option>
+              <option value="aux-online">Curso Auxiliar (Online)</option>
+              <option value="otro">No lo tengo claro · Quiero orientación</option>
             </select>
             <span class="form-error" id="programa-error" role="alert" aria-live="polite"></span>
           </div>
 
-          <div class="form-group" style="margin-bottom:16px;">
-            <label class="form-label" for="mensaje">Mensaje <span class="required" aria-hidden="true">*</span></label>
-            <textarea
-              id="mensaje"
-              name="mensaje"
-              class="form-control"
-              placeholder="Cuéntanos en qué punto de tu carrera estás y qué dudas tienes. Cuanto más nos cuentes, mejor podremos ayudarte."
-              rows="5"
-              data-rules="required|minlength:20"
-              data-label="El mensaje"
-              aria-required="true"
-              aria-describedby="mensaje-error"></textarea>
+          <div class="form-group" style="margin-bottom:var(--space-2);">
+            <label class="form-label" for="mensaje">Mensaje <span class="form-label__required" aria-hidden="true">*</span></label>
+            <textarea id="mensaje" name="mensaje" class="form-control" placeholder="Cuéntanos en qué punto de tu carrera estás y qué dudas tienes. Cuanto más nos cuentes, mejor podremos ayudarte." rows="5" data-rules="required|minlength:20" data-label="El mensaje" aria-required="true" aria-describedby="mensaje-error"></textarea>
             <span class="form-error" id="mensaje-error" role="alert" aria-live="polite"></span>
           </div>
 
-          <div class="form-group" style="margin-bottom:24px;">
+          <div class="form-group" style="margin-bottom:var(--space-2);">
             <label class="form-checkbox">
-              <input
-                type="checkbox"
-                id="privacidad"
-                name="privacidad"
-                data-rules="checked"
-                data-label="la política de privacidad"
-                aria-required="true"
-                aria-describedby="privacidad-error">
-              <span>He leído y acepto la <a href="legal/privacidad.html" target="_blank">Política de privacidad</a> y consiento el tratamiento de mis datos para recibir información académica. <span class="required" aria-hidden="true">*</span></span>
+              <input type="checkbox" id="privacidad" name="privacidad" data-rules="checked" data-label="la política de privacidad" aria-required="true" aria-describedby="privacidad-error">
+              <span>He leído y acepto la <a href="legal/privacidad.html" target="_blank">Política de privacidad</a> y consiento el tratamiento de mis datos para recibir información académica. <span class="form-label__required" aria-hidden="true">*</span></span>
             </label>
             <span class="form-error" id="privacidad-error" role="alert" aria-live="polite"></span>
           </div>
 
-          <div class="form-group" style="margin-bottom:24px;">
+          <div class="form-group" style="margin-bottom:var(--space-3);">
             <label class="form-checkbox">
               <input type="checkbox" id="comercial" name="comercial">
-              <span>Acepto recibir comunicaciones comerciales de Auramed por medios electrónicos.</span>
+              <span>Acepto recibir comunicaciones comerciales de Estemia por medios electrónicos.</span>
             </label>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-full btn-lg" id="submit-btn" data-label="Enviar solicitud">
-            Enviar solicitud →
+          <button type="submit" class="btn btn--primary btn--full btn--lg" id="submit-btn">
+            Enviar solicitud <i class="bi bi-send"></i>
           </button>
 
-          <p style="font-size:0.75rem; color:var(--slate-light); margin-top:12px; text-align:center;">
-            Tus datos están protegidos. No los compartiremos con terceros. Consulta nuestra <a href="legal/privacidad.html" style="color:var(--gold);">política de privacidad</a>.
+          <p style="font-size:var(--text-xs); color:var(--color-slate-light); margin-top:var(--space-2); text-align:center;">
+            Tus datos están protegidos. No los compartiremos con terceros.
           </p>
         </form>
       </div>
@@ -310,60 +178,49 @@
   </div>
 </section>
 
-<!-- ═══ ALTERNATIVAS ═══ -->
-<section style="background:var(--white);" class="section-sm" aria-labelledby="alt-heading">
+<!-- ALTERNATIVAS -->
+<section style="background:var(--color-white);" class="section--sm">
   <div class="container">
     <div class="section-header text-center reveal">
-      <h2 id="alt-heading" style="font-size:1.6rem;">Otras Formas de Contactarnos</h2>
+      <h2 style="font-size:1.6rem;">Otras Formas de Contactarnos</h2>
     </div>
     <div class="grid-3">
-      <div class="card reveal" style="text-align:center; padding:32px;">
-        <div style="font-size:2rem; margin-bottom:12px;">📞</div>
-        <h3 style="font-size:1.1rem; margin-bottom:8px;">Llámanos</h3>
-        <p style="font-size:0.88rem; margin-bottom:16px;">Habla directamente con nuestro equipo académico de lunes a viernes.</p>
-        <a href="tel:+34656438139" class="btn btn-outline">+34 656 438 139</a>
+      <div class="card alt-contact-card reveal">
+        <div class="icon-wrap"><i class="bi bi-telephone-fill"></i></div>
+        <h3>Llámanos</h3>
+        <p>Habla directamente con nuestro equipo académico de lunes a viernes.</p>
+        <a href="tel:+34656438139" class="btn btn--outline">+34 656 438 139</a>
       </div>
-      <div class="card reveal" style="text-align:center; padding:32px;">
-        <div style="font-size:2rem; margin-bottom:12px;">✉️</div>
-        <h3 style="font-size:1.1rem; margin-bottom:8px;">Escríbenos</h3>
-        <p style="font-size:0.88rem; margin-bottom:16px;">Respondemos en menos de 24 horas laborables. Detalla tu perfil para una respuesta más personalizada.</p>
-        <a href="mailto:info@auramed.es" class="btn btn-outline">info@auramed.es</a>
+      <div class="card alt-contact-card reveal">
+        <div class="icon-wrap"><i class="bi bi-envelope-fill"></i></div>
+        <h3>Escríbenos</h3>
+        <p>Respondemos en menos de 24 horas laborables. Detalla tu perfil para una respuesta personalizada.</p>
+        <a href="mailto:info@estemia.es" class="btn btn--outline">info@estemia.es</a>
       </div>
-      <div class="card reveal" style="text-align:center; padding:32px;">
-        <div style="font-size:2rem; margin-bottom:12px;">💬</div>
-        <h3 style="font-size:1.1rem; margin-bottom:8px;">WhatsApp</h3>
-        <p style="font-size:0.88rem; margin-bottom:16px;">Contacto rápido y directo para resolver dudas puntuales sobre los programas.</p>
-        <a href="https://wa.me/34656438139" target="_blank" rel="noopener" class="btn btn-outline">Abrir WhatsApp</a>
+      <div class="card alt-contact-card reveal">
+        <div class="icon-wrap"><i class="bi bi-whatsapp"></i></div>
+        <h3>WhatsApp</h3>
+        <p>Contacto rápido y directo para resolver dudas puntuales sobre los programas.</p>
+        <a href="https://wa.me/34656438139" target="_blank" rel="noopener" class="btn btn--outline">Abrir WhatsApp</a>
       </div>
     </div>
   </div>
 </section>
-
 </main>
 
-<!-- FOOTER -->
 <footer class="site-footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">
-      <div>
-        <div class="footer-logo">Aura<span>med</span></div>
-        <p class="footer-desc">Escuela de referencia en Medicina Estética, Antienvejecimiento y Nutrición. Partner oficial UCAM.</p>
-        <a href="tel:+34656438139" class="footer-contact-item"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013 5.18 2 2 0 015 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>+34 656 438 139</a>
-        <a href="mailto:info@auramed.es" class="footer-contact-item"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@auramed.es</a>
-        <span class="footer-contact-item"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>C/ Torquemada 16 · Madrid</span>
-      </div>
+      <div><div class="footer-logo">Esti<span>mia</span></div><p class="footer-desc">Escuela de referencia en Medicina Estética, Antienvejecimiento y Nutrición. Partner oficial UCAM.</p><a href="tel:+34656438139" class="footer-contact-item"><i class="bi bi-telephone"></i> +34 656 438 139</a><a href="mailto:info@estemia.es" class="footer-contact-item"><i class="bi bi-envelope"></i> info@estemia.es</a><span class="footer-contact-item"><i class="bi bi-geo-alt"></i> C/ Torquemada 16 · Madrid</span></div>
       <div class="footer-col"><h5>Programas</h5><ul><li><a href="servicios.html#medicina">Medicina Estética</a></li><li><a href="servicios.html#tricologia">Tricología Capilar</a></li><li><a href="servicios.html#enfermeria">Enfermería Capilar</a></li><li><a href="servicios.html#auxiliar">Técnico Auxiliar</a></li></ul></div>
-      <div class="footer-col"><h5>Auramed</h5><ul><li><a href="nosotros.html">Sobre nosotros</a></li><li><a href="servicios.html#practicas">Clínicas de prácticas</a></li><li><a href="blog/index.html">Blog</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+      <div class="footer-col"><h5>Estemia</h5><ul><li><a href="nosotros.html">Sobre nosotros</a></li><li><a href="servicios.html#practicas">Clínicas de prácticas</a></li><li><a href="blog/index.html">Blog</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
       <div class="footer-col"><h5>Legal</h5><ul><li><a href="legal/aviso-legal.html">Aviso legal</a></li><li><a href="legal/privacidad.html">Privacidad</a></li><li><a href="legal/cookies.html">Cookies</a></li></ul></div>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-copy">© 2025 Auramed · Partner académico: UCAM</p>
-      <div class="footer-legal"><a href="legal/aviso-legal.html">Aviso legal</a><a href="legal/privacidad.html">Privacidad</a><a href="legal/cookies.html">Cookies</a></div>
-    </div>
+    <div class="footer-bottom"><p class="footer-copy">&copy; 2025 Estemia &middot; Partner académico: UCAM</p><div class="footer-legal"><a href="legal/aviso-legal.html">Aviso legal</a><a href="legal/privacidad.html">Privacidad</a><a href="legal/cookies.html">Cookies</a></div></div>
   </div>
 </footer>
-<div id="cookie-banner" role="dialog" aria-live="polite"><p>Usamos cookies para mejorar tu experiencia. <a href="legal/cookies.html">Política de cookies</a>.</p><div class="cookie-btns"><button id="cookie-decline" class="btn btn-secondary btn-sm">Rechazar</button><button id="cookie-accept" class="btn btn-primary btn-sm">Aceptar</button></div></div>
-<button id="scroll-top" aria-label="Volver arriba"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg></button>
+<div id="cookie-banner" role="dialog" aria-live="polite"><p>Usamos cookies. <a href="legal/cookies.html">Política de cookies</a>.</p><div class="cookie-btns"><button id="cookie-decline" class="btn btn--secondary btn--sm">Rechazar</button><button id="cookie-accept" class="btn btn--primary btn--sm">Aceptar</button></div></div>
+<button id="scroll-top" aria-label="Volver al inicio"><i class="bi bi-chevron-up"></i></button>
 <script src="js/main.js"></script>
 </body>
 </html>

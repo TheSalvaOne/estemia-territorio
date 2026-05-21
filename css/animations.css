@@ -1,0 +1,277 @@
+/* =============================================================================
+   ESTEMIA · animations.css
+   Keyframes · Reveal on scroll · Micro-interacciones · Efectos hover
+   ============================================================================= */
+
+/* =============================================================================
+   KEYFRAMES
+   ============================================================================= */
+
+/* Entrada desde abajo con fade */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Entrada desde la izquierda */
+@keyframes fade-right {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Entrada desde la derecha */
+@keyframes fade-left {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Escala desde 0.92 */
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Pulso suave (CTA badges) */
+@keyframes pulse-soft {
+  0%, 100% { box-shadow: 0 0 0 0 var(--color-gold-alpha-30); }
+  50%       { box-shadow: 0 0 0 8px transparent; }
+}
+
+/* Brillo dorado (borde animado) */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* Parpadeo de cursor (blog) */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Flotación suave (elementos decorativos) */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* Rotación continua (spinner) */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Línea de carga (skeleton) */
+@keyframes skeleton-wave {
+  0%   { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+/* =============================================================================
+   CLASES DE ANIMACIÓN INMEDIATA (hero, primer fold)
+   ============================================================================= */
+.animate-fade-up    { animation: fade-up    0.65s ease both; }
+.animate-fade-right { animation: fade-right 0.65s ease both; }
+.animate-fade-left  { animation: fade-left  0.65s ease both; }
+.animate-scale-in   { animation: scale-in   0.50s ease both; }
+
+/* Delays escalonados */
+.delay-1  { animation-delay: 0.10s; }
+.delay-2  { animation-delay: 0.22s; }
+.delay-3  { animation-delay: 0.36s; }
+.delay-4  { animation-delay: 0.52s; }
+.delay-5  { animation-delay: 0.70s; }
+
+/* =============================================================================
+   REVEAL ON SCROLL (IntersectionObserver vía JS)
+   Los elementos empiezan ocultos y se hacen visibles con la clase .is-visible
+   ============================================================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.70s ease,
+    transform 0.70s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Variantes de reveal */
+.reveal--right {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+}
+
+.reveal--right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal--left {
+  opacity: 0;
+  transform: translateX(20px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+}
+
+.reveal--left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal--scale {
+  opacity: 0;
+  transform: scale(0.94);
+  transition:
+    opacity 0.60s ease,
+    transform 0.60s ease;
+}
+
+.reveal--scale.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Delays en reveal (CSS stagger para grids) */
+.reveal:nth-child(2) { transition-delay: 0.10s; }
+.reveal:nth-child(3) { transition-delay: 0.20s; }
+.reveal:nth-child(4) { transition-delay: 0.30s; }
+.reveal:nth-child(5) { transition-delay: 0.40s; }
+.reveal:nth-child(6) { transition-delay: 0.50s; }
+
+/* =============================================================================
+   MICRO-INTERACCIONES EN COMPONENTES
+   ============================================================================= */
+
+/* -- Línea dorada bajo el nav activo (ya está en components.css con transition) -- */
+
+/* -- Botón: ripple effect al click -- */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 50%;
+  width: 0; height: 0;
+  background: rgba(255,255,255,0.20);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+}
+
+.btn:active::after {
+  width: 200%;
+  height: 400%;
+  opacity: 0;
+  transition: 0s;
+}
+
+/* -- Cards: sombra suave al hover (ya en components.css) -- */
+
+/* -- Stat numbers: counter animado (controlado por JS, aquí la transición) -- */
+.stat-num {
+  transition: color var(--tr-base);
+}
+
+/* -- FAQ icono: ya gira en components.css -- */
+
+/* -- Hero badge: pulso continuo -- */
+.hero-badge {
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+
+/* -- Imagen de programa en card: scale en hover -- */
+.prog-card-img img {
+  transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* -- Testimonio quote mark: fade en hover del card -- */
+.testimonial-card:hover .testimonial-quote {
+  color: var(--color-gold-pale);
+  transition: color var(--tr-base);
+}
+
+/* -- Flotación para elementos decorativos del hero -- */
+.float-element {
+  animation: float 5s ease-in-out infinite;
+}
+
+.float-element:nth-child(2) { animation-delay: 1.5s; }
+.float-element:nth-child(3) { animation-delay: 3.0s; }
+
+/* -- Shimmer en borde (CTA secciones) -- */
+.btn--shimmer {
+  background-size: 200% auto;
+  animation: shimmer 2.5s linear infinite;
+}
+
+/* -- Spinner de carga -- */
+.spinner {
+  width: 20px; height: 20px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: var(--color-white);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+/* -- Transición de página (añadir clase a body con JS) -- */
+body.page-transition * {
+  transition: none !important;
+}
+
+/* =============================================================================
+   REDUCIR MOVIMIENTO (accesibilidad)
+   ============================================================================= */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal,
+  .reveal--right,
+  .reveal--left,
+  .reveal--scale {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

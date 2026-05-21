@@ -4,77 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
-  <title>Página no encontrada | Auramed</title>
+  <title>Página no encontrada | Estemia</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/main.css">
-  <style>
-    .error-section {
-      min-height: 100vh;
-      background: var(--navy);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px var(--s3) var(--s6);
-      position: relative;
-      overflow: hidden;
-    }
-    .error-section::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 70% 50% at 30% 40%, rgba(45,106,173,0.18) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 40% at 70% 70%, rgba(184,150,62,0.08) 0%, transparent 60%);
-    }
-    .error-inner { position: relative; z-index: 1; max-width: 560px; }
-    .error-code {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(6rem, 18vw, 10rem);
-      font-weight: 700;
-      line-height: 1;
-      color: transparent;
-      -webkit-text-stroke: 2px rgba(184,150,62,0.4);
-      margin-bottom: -16px;
-      display: block;
-    }
-    .error-divider { width: 60px; height: 2px; background: var(--gold); margin: 24px auto; }
-    .error-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
-    .error-links { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
-    .error-links a {
-      color: rgba(255,255,255,0.4);
-      font-size: 0.78rem;
-      padding: 6px 14px;
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 50px;
-      transition: all 0.2s;
-    }
-    .error-links a:hover { color: var(--gold-light); border-color: rgba(184,150,62,0.4); }
-  </style>
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages/error.css">
 </head>
-<body style="background:var(--navy);">
-
+<body style="background:var(--color-navy);">
 <nav id="main-nav" role="navigation" aria-label="Navegación principal">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Aura<span>med</span></a>
-    <div class="nav-links">
-      <a href="index.html">Inicio</a>
-      <a href="servicios.html">Programas</a>
-      <a href="nosotros.html">Nosotros</a>
-      <a href="blog/index.html">Blog</a>
-      <a href="contacto.html">Contacto</a>
-    </div>
-    <a href="contacto.html" class="btn btn-primary btn-sm nav-cta">Reservar plaza</a>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <a href="index.html" class="nav-logo">Esti<span>mia</span></a>
+    <div class="nav-links"><a href="index.html">Inicio</a><a href="servicios.html">Programas</a><a href="nosotros.html">Nosotros</a><a href="blog/index.html">Blog</a><a href="contacto.html">Contacto</a></div>
+    <a href="contacto.html" class="btn btn--primary btn--sm nav-cta">Reservar plaza</a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="nav-mobile" id="nav-mobile">
-  <a href="index.html">Inicio</a>
-  <a href="servicios.html">Programas</a>
-  <a href="nosotros.html">Nosotros</a>
-  <a href="blog/index.html">Blog</a>
-  <a href="contacto.html">Contacto</a>
-  <a href="contacto.html" class="btn btn-primary btn-lg">Reservar plaza</a>
+  <a href="index.html">Inicio</a><a href="servicios.html">Programas</a><a href="nosotros.html">Nosotros</a><a href="blog/index.html">Blog</a><a href="contacto.html">Contacto</a>
+  <a href="contacto.html" class="btn btn--primary btn--lg">Reservar plaza</a>
 </div>
 
 <main id="main-content">
@@ -82,19 +30,15 @@
     <div class="error-inner">
       <span class="error-code" aria-hidden="true">404</span>
       <div class="error-divider"></div>
-      <h1 id="error-heading" style="color:var(--white); font-size:clamp(1.6rem,4vw,2.2rem); margin-bottom:16px;">
-        Esta página se perdió en el quirófano
-      </h1>
-      <p style="color:rgba(255,255,255,0.6); font-size:1rem; margin-bottom:0;">
-        La página que buscas no existe o ha sido movida. Pero tranquilo, tu carrera en medicina estética sigue intacta.
-      </p>
+      <h1 id="error-heading" class="error-heading">Esta página se perdió en el quirófano</h1>
+      <p class="error-desc">La página que buscas no existe o ha sido movida. Pero tranquilo, tu carrera en medicina estética sigue intacta.</p>
       <div class="error-btns">
-        <a href="index.html" class="btn btn-primary btn-lg">Volver al inicio →</a>
-        <a href="contacto.html" class="btn btn-secondary btn-lg">Hablar con el equipo</a>
+        <a href="index.html" class="btn btn--primary btn--lg">Volver al inicio <i class="bi bi-arrow-right"></i></a>
+        <a href="contacto.html" class="btn btn--secondary btn--lg">Hablar con el equipo</a>
       </div>
       <nav class="error-links" aria-label="Enlaces rápidos">
         <a href="servicios.html">Programas académicos</a>
-        <a href="nosotros.html">Sobre Auramed</a>
+        <a href="nosotros.html">Sobre Estemia</a>
         <a href="blog/index.html">Blog</a>
         <a href="servicios.html#practicas">Clínicas partner</a>
         <a href="contacto.html">Contacto</a>
@@ -102,7 +46,6 @@
     </div>
   </section>
 </main>
-
 <script src="js/main.js"></script>
 </body>
 </html>

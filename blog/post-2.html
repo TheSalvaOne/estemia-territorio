@@ -3,197 +3,163 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Por qué la metodología One to One es la única forma efectiva de aprender medicina estética. Evidencia, argumentos y lo que dicen los propios especialistas.">
-  <title>Por Qué las Prácticas Individuales Cambian tu Carrera | Blog Auramed</title>
+  <meta name="description" content="Por qué la metodología One to One es la única forma efectiva de aprender medicina estética. La diferencia entre observar y hacer, y lo que ningún vídeo puede enseñarte.">
+  <title>Por Qué las Prácticas Individuales Cambian tu Carrera | Blog Estemia</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="../css/main.css">
-  <style>
-    .article-hero { background: var(--navy); padding: calc(64px + var(--s10)) 0 var(--s8); position: relative; overflow: hidden; }
-    .article-hero::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(45,106,173,0.2) 0%, transparent 60%); }
-    .article-hero .container { position: relative; z-index: 1; max-width: 780px; }
-    .article-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
-    .article-meta span { color: rgba(255,255,255,0.45); font-size: 0.78rem; }
-    .article-meta .sep { color: rgba(255,255,255,0.2); }
-    .article-body { max-width: 780px; margin: 0 auto; padding: var(--s10) var(--s3); }
-    .article-body h2 { font-size: 1.8rem; margin: 48px 0 16px; color: var(--navy); }
-    .article-body h3 { font-size: 1.25rem; margin: 32px 0 12px; color: var(--navy); }
-    .article-body p { margin-bottom: 20px; font-size: 1rem; line-height: 1.8; }
-    .article-body ul, .article-body ol { margin: 0 0 20px 20px; }
-    .article-body li { font-size: 0.97rem; color: var(--slate); line-height: 1.75; margin-bottom: 8px; }
-    .article-body strong { color: var(--navy); }
-    .article-callout { background: var(--gold-alpha); border-left: 4px solid var(--gold); border-radius: 0 var(--r-md) var(--r-md) 0; padding: 20px 24px; margin: 32px 0; }
-    .article-callout p { margin: 0; color: #6b4f1a; font-size: 0.95rem; }
-    .article-cta { background: var(--navy); border-radius: 12px; padding: 40px; text-align: center; margin: 48px 0; }
-    .article-cta h3 { color: var(--white); margin-bottom: 12px; }
-    .article-cta p { color: rgba(255,255,255,0.65); font-size: 0.9rem; margin-bottom: 24px; }
-    .related-posts { border-top: 1px solid var(--border); padding-top: 48px; margin-top: 48px; }
-    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
-    .related-card { display: flex; gap: 16px; align-items: flex-start; padding: 16px; border: 1px solid var(--border); border-radius: 8px; transition: all 0.2s; }
-    .related-card:hover { border-color: var(--gold-pale); box-shadow: var(--shadow-sm); }
-    .related-card img { width: 72px; height: 72px; object-fit: cover; border-radius: 6px; flex-shrink: 0; }
-    .related-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 4px; line-height: 1.2; }
-    .related-card-meta { font-size: 0.72rem; color: var(--slate-light); }
-    .author-box { display: flex; align-items: center; gap: 20px; background: var(--ivory); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 40px 0; }
-    .author-avatar-lg { width: 64px; height: 64px; background: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--gold-light); flex-shrink: 0; }
-    @media (max-width: 600px) { .related-grid { grid-template-columns: 1fr; } .author-box { flex-direction: column; text-align: center; } }
-  </style>
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/pages/blog.css">
 </head>
 <body>
-
 <nav id="main-nav" role="navigation" aria-label="Navegación principal">
   <div class="nav-inner">
-    <a href="../index.html" class="nav-logo">Aura<span>med</span></a>
-    <div class="nav-links">
-      <a href="../index.html">Inicio</a><a href="../servicios.html">Programas</a><a href="../nosotros.html">Nosotros</a><a href="index.html" class="active">Blog</a><a href="../contacto.html">Contacto</a>
-    </div>
-    <a href="../contacto.html" class="btn btn-primary btn-sm nav-cta">Reservar plaza</a>
+    <a href="../index.html" class="nav-logo">Esti<span>mia</span></a>
+    <div class="nav-links"><a href="../index.html">Inicio</a><a href="../servicios.html">Programas</a><a href="../nosotros.html">Nosotros</a><a href="index.html" class="is-active">Blog</a><a href="../contacto.html">Contacto</a></div>
+    <a href="../contacto.html" class="btn btn--primary btn--sm nav-cta">Reservar plaza</a>
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="nav-mobile" id="nav-mobile">
   <a href="../index.html">Inicio</a><a href="../servicios.html">Programas</a><a href="../nosotros.html">Nosotros</a><a href="index.html">Blog</a><a href="../contacto.html">Contacto</a>
-  <a href="../contacto.html" class="btn btn-primary btn-lg">Reservar plaza</a>
+  <a href="../contacto.html" class="btn btn--primary btn--lg">Reservar plaza</a>
 </div>
 
 <main id="main-content">
-
 <header class="article-hero">
   <div class="container">
     <nav class="page-breadcrumb" aria-label="Ruta de navegación">
-      <a href="../index.html">Inicio</a> <span>›</span> <a href="index.html">Blog</a> <span>›</span> <span>Prácticas One to One</span>
+      <a href="../index.html">Inicio</a> <span>›</span> <a href="index.html">Blog</a> <span>›</span> <span>Prácticas individuales</span>
     </nav>
     <div class="article-meta">
-      <span class="badge badge-gold">Prácticas</span>
-      <span class="sep">·</span>
+      <span class="badge badge--gold">Prácticas</span>
+      <span class="article-meta-sep">&middot;</span>
       <span>Dr. Rafael Linares</span>
-      <span class="sep">·</span>
+      <span class="article-meta-sep">&middot;</span>
       <time datetime="2025-04-15">15 de abril de 2025</time>
-      <span class="sep">·</span>
+      <span class="article-meta-sep">&middot;</span>
       <span>8 min de lectura</span>
     </div>
-    <h1 style="color:var(--white); max-width:680px; line-height:1.15;">Por Qué las Prácticas Individuales Cambian tu Carrera en Medicina Estética</h1>
+    <h1 class="text-white" style="max-width:700px; margin-top:var(--space-2);">
+      Por Qué las Prácticas Individuales Cambian tu Carrera en Medicina Estética
+    </h1>
   </div>
 </header>
 
-<div style="background:var(--white);">
+<div style="background:var(--color-white);">
   <div class="article-body">
-
-    <p style="font-size:1.08rem; color:var(--slate); border-left:3px solid var(--gold); padding-left:20px; margin-bottom:32px;"><em>La diferencia entre un médico que sabe y un médico que puede es exactamente la misma que entre ver y hacer. Llevo más de veinte años formando especialistas en medicina estética y puedo decirte que ningún vídeo, ningún manual y ningún grupo de prácticas puede sustituir al contacto directo con el paciente bajo supervisión individualizada.</em></p>
 
     <div class="author-box">
       <div class="author-avatar-lg">RL</div>
       <div>
-        <div style="font-weight:600; color:var(--navy); margin-bottom:4px;">Dr. Rafael Linares</div>
-        <div style="font-size:0.8rem; color:var(--gold); font-weight:600; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:8px;">Director Académico · Auramed</div>
-        <div style="font-size:0.85rem; color:var(--slate);">Médico especialista en Medicina Estética con más de 20 años de práctica clínica y experiencia docente universitaria.</div>
+        <div class="author-name">Dr. Rafael Linares</div>
+        <div class="author-role-label">Director Académico · Estemia</div>
+        <p>Médico especialista en Medicina Estética con más de 20 años de práctica clínica. Ha formado a centenares de especialistas en España y Latinoamérica.</p>
       </div>
     </div>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    <p class="article-lead">Llevo más de veinte años formando especialistas en medicina estética. En todo ese tiempo, la variable que más diferencia a un médico que sale capaz de ejercer desde el primer día de uno que necesita años para asentarse es siempre la misma: la calidad de las prácticas que tuvo durante su formación.</p>
 
-    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    <p>No es la cantidad de horas de teoría. No es el nombre de la universidad que firma el título. No es la tecnología de la plataforma online. Es lo que ocurre en el quirófano, entre el médico en formación y el paciente real, con alguien al lado corrigiéndote en tiempo real.</p>
 
-    <h2>El Problema con los Grupos de Prácticas</h2>
+    <p>Y sin embargo, el sector lleva años vendiendo formación con prácticas de observación grupal como si fueran equivalentes a la práctica individualizada. No lo son. No se parecen. Y la diferencia tiene consecuencias directas en la carrera del médico que elige mal.</p>
 
-    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+    <h2>La Trampa de las Prácticas en Grupo</h2>
 
-    <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
+    <p>Imagina este escenario: quince médicos en formación, una sala de tratamiento, y un especialista realizando un procedimiento de relleno dérmico. El especialista trabaja, explica lo que hace, responde alguna pregunta del grupo. Al cabo de una hora, todos salen habiendo "visto" el procedimiento.</p>
 
-    <ul>
-      <li>En un grupo de 10 alumnos, cada uno recibe menos de 5 minutos de atención directa del especialista por sesión.</li>
-      <li>Las preguntas individuales quedan sin responder o se posponen indefinidamente.</li>
-      <li>Los errores técnicos no se corrigen en tiempo real porque el médico está atendiendo a otro alumno.</li>
-      <li>El alumno sale de la sesión sin haber ejecutado el procedimiento por sí mismo.</li>
-    </ul>
+    <p>Este es el modelo estándar de prácticas en la mayoría de los programas de medicina estética en España. Y hay un problema fundamental con él: ver no es aprender a hacer. Ver un procedimiento diez veces no te prepara para realizarlo. Te prepara para reconocerlo cuando lo ves, que es una cosa completamente distinta.</p>
+
+    <p>La neurociencia del aprendizaje motor es clara al respecto. Las habilidades procedimentales, aquellas que implican coordinación manual, toma de decisiones en tiempo real y adaptación a variables individuales del paciente, solo se consolidan con la práctica repetida y supervisada del propio gesto. No con la observación del gesto ajeno.</p>
 
     <div class="article-callout">
-      <p>💡 <strong>Reflexión:</strong> Imagina aprender a conducir sentado en el asiento trasero mientras otra persona conduce y el instructor solo te mira de vez en cuando. Eso es exactamente lo que ocurre en las prácticas grupales de medicina estética.</p>
+      <p><i class="bi bi-lightbulb-fill"></i> <strong>Para entender la diferencia:</strong> Aprender a inyectar toxina botulínica observando cómo lo hace otro médico es como aprender a conducir siendo pasajero. Puedes ver todo lo que hace el conductor, entender la lógica, incluso anticipar sus movimientos. Pero cuando te sientas al volante por primera vez, te das cuenta de que no sabes conducir.</p>
     </div>
 
-    <h2>Qué Cambia con la Metodología One to One</h2>
+    <h2>Qué Ocurre Realmente en una Práctica One to One</h2>
 
-    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+    <p>Una práctica individualizada no es simplemente tener más tiempo con el especialista. Es una experiencia cualitativamente diferente que cambia el tipo de aprendizaje que se produce.</p>
 
-    <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
+    <p>Cuando eres el único alumno en la sesión, todo cambia. Las preguntas que haces son las que tú necesitas hacer, no las que ya preguntó otra persona. Las correcciones que recibes son sobre tu técnica específica, no sobre la técnica en general. La atención del especialista está completamente dirigida a ti, a tus patrones de movimiento, a tus errores concretos, a tus puntos de mejora particulares.</p>
 
-    <h3>Corrección técnica en tiempo real</h3>
-    <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+    <p>Hay algo que como docente me resulta imposible hacer en un grupo y que es fundamental en la formación clínica: corregir en el momento exacto en que el error se produce. En un grupo, para cuando terminas de atender a un alumno, el momento del error del siguiente ya pasó. En una sesión individual, puedo detener el procedimiento en el instante preciso, explicar qué ha ocurrido, demostrar la alternativa correcta y pedir al médico que lo repita inmediatamente. Eso es aprendizaje clínico real.</p>
 
-    <h3>Adaptación al nivel de cada alumno</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <h2>El Efecto sobre la Seguridad del Paciente</h2>
 
-    <h3>Contacto real con el paciente</h3>
-    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Hay una dimensión de las prácticas individualizadas que raramente se menciona en los materiales de marketing de los programas de formación, pero que es la más importante de todas: la seguridad del paciente.</p>
 
-    <h2>Lo que Dicen los Alumnos después de sus Primeras Prácticas</h2>
+    <p>Un médico que sale de una formación habiendo realizado procedimientos reales bajo supervisión directa ha cometido sus errores en el entorno más seguro posible: con un experto al lado que puede intervenir en cualquier momento. Sus errores han sido corregidos antes de que tuvieran consecuencias. Ha desarrollado el criterio para reconocer sus propias limitaciones y sabe cuándo parar y pedir ayuda.</p>
 
-    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+    <p>Un médico que sale de una formación habiendo observado procedimientos realizados por otros no ha tenido esa oportunidad. Sus primeros errores los cometerá solo, en su propia consulta, con pacientes que confían en que su formación les da competencia real para lo que están haciendo.</p>
 
-    <blockquote style="border-left:4px solid var(--gold-pale); padding:20px 24px; margin:32px 0; background:var(--ivory); border-radius:0 8px 8px 0; font-style:italic; color:var(--slate);">
-      "Salí de la primera jornada de prácticas habiendo hecho lo que tardé meses en hacer durante mi residencia. No es exageración: es que nunca nadie me había dedicado tanto tiempo y atención a la vez."
-      <footer style="margin-top:12px; font-style:normal; font-size:0.82rem; color:var(--slate-light);">— María Pilar García Serrato, Máster Medicina Estética Semipresencial</footer>
+    <p>No es una cuestión académica. Es una cuestión de ética profesional y de responsabilidad hacia los pacientes.</p>
+
+    <h2>Por Qué la Mayoría de los Programas no Ofrecen Prácticas Individuales</h2>
+
+    <p>La respuesta es económica. Una práctica individualizada exige mucho más recursos que una práctica grupal. Necesitas más especialistas disponibles, más tiempo de cada especialista por alumno, más coordinación logística con las clínicas donde se realizan las prácticas.</p>
+
+    <p>En un modelo de prácticas grupales, un especialista puede atender a quince alumnos en el mismo tiempo que en el modelo individualizado atendería a uno o dos. La diferencia en coste por alumno es enorme. Y esa diferencia se traslada directamente a si el programa puede ser rentable con precios de mercado o no.</p>
+
+    <p>Dicho de otro modo: los programas que ofrecen prácticas grupales no lo hacen porque crean que son igual de buenas. Lo hacen porque son significativamente más baratas de organizar. La justificación pedagógica que puedas leer en su página web es una racionalización posterior de una decisión económica.</p>
+
+    <h2>Lo que Deberías Preguntar y Exigir por Escrito</h2>
+
+    <p>Si estás evaluando un programa de medicina estética y la calidad de las prácticas es tu prioridad, estas son las preguntas concretas que debes hacer antes de firmar nada:</p>
+
+    <ul>
+      <li><strong>Número máximo de alumnos por sesión de práctica.</strong> La respuesta debe ser uno o dos como máximo. Si la respuesta incluye rangos o condicionantes, pide la cifra máxima garantizada.</li>
+      <li><strong>Qué procedimientos realizarás tú mismo, no observarás.</strong> La distinción entre "realizarás" y "participarás en" o "asistirás a" es fundamental. Pide que se especifiquen los procedimientos concretos y el nivel de implicación directa.</li>
+      <li><strong>Quién supervisa las prácticas y cuál es su perfil clínico.</strong> El supervisor debe ser un especialista en activo con experiencia demostrable en el procedimiento que está supervisando.</li>
+      <li><strong>Que conste por escrito en el contrato.</strong> Todo lo anterior debe aparecer en el documento que firmas, no solo en el material de marketing o en lo que te dice el comercial. Lo que no está en el contrato no existe como compromiso legal.</li>
+    </ul>
+
+    <blockquote>
+      "Salí de mi primera jornada de prácticas habiendo realizado procedimientos que en mi anterior formación solo había visto hacer. La diferencia no era solo técnica. Era en cómo me sentía al salir: con la seguridad de que sabía lo que estaba haciendo, no con la esperanza de que lo aprendería con el tiempo."
+      <footer>— María Pilar García Serrato, Médico. Máster Medicina Estética Estemia.</footer>
     </blockquote>
 
-    <p>Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+    <p>La medicina estética es una especialidad manual. Como todas las especialidades manuales, se aprende haciendo. Un programa que no te permite hacer durante la formación no es un programa de calidad, independientemente de cuántas horas de contenido teórico online te ofrezca o de lo bien diseñada que esté su plataforma digital.</p>
 
-    <h2>Conclusión: La Práctica No es un Complemento, es el Centro</h2>
-
-    <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
-
-    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+    <p>Elige tu formación en función de lo que ocurre en el quirófano. Todo lo demás es secundario.</p>
 
     <div class="article-cta">
       <h3>Descubre Cómo Son Nuestras Prácticas One to One</h3>
-      <p>Contacta con nuestro equipo y te explicamos cómo funciona el proceso completo: desde la preparación digital hasta la sesión presencial en quirófano.</p>
-      <a href="../contacto.html" class="btn btn-primary btn-lg">Hablar con el equipo →</a>
+      <p>Contacta con el equipo académico de Estemia y te explicamos cómo funciona el proceso completo, desde la preparación digital hasta el primer día en clínica.</p>
+      <a href="../contacto.html" class="btn btn--primary btn--lg">Hablar con el equipo →</a>
     </div>
 
     <div class="related-posts">
       <h3 style="font-size:1.3rem; margin-bottom:4px;">Artículos relacionados</h3>
-      <p style="color:var(--slate-light); font-size:0.85rem; margin-bottom:0;">Sigue aprendiendo sobre formación en medicina estética</p>
+      <p style="color:var(--color-slate-light); font-size:var(--text-sm);">Sigue aprendiendo sobre formación en medicina estética</p>
       <div class="related-grid">
-        <a href="post-1.html" class="related-card" style="text-decoration:none;">
-          <img src="../assets/img/master_internacional_en_medicina_estetica_seme.jpeg" alt="Elegir máster">
-          <div>
-            <div class="related-card-title">Cómo Elegir un Máster en Medicina Estética</div>
-            <div class="related-card-meta">12 min · Equipo Auramed</div>
-          </div>
+        <a href="post-1.html" class="related-card">
+          <img src="../assets/img/master_internacional_en_medicina_estetica_seme.jpeg" alt="Cómo elegir un máster en medicina estética" loading="lazy">
+          <div><div class="related-card-title">Cómo Elegir un Máster en Medicina Estética: La Guía que Nadie te Dio</div><div class="related-card-meta">10 min · Equipo Estemia</div></div>
         </a>
-        <a href="post-3.html" class="related-card" style="text-decoration:none;">
-          <img src="../assets/img/titulos_posgrado_universitario_enfermeria.jpeg" alt="Salidas profesionales">
-          <div>
-            <div class="related-card-title">Salidas Profesionales en Medicina Estética</div>
-            <div class="related-card-meta">10 min · Equipo Auramed</div>
-          </div>
+        <a href="post-3.html" class="related-card">
+          <img src="../assets/img/titulos_posgrado_universitario_enfermeria.jpeg" alt="Salidas profesionales medicina estética" loading="lazy">
+          <div><div class="related-card-title">Salidas Profesionales en Medicina Estética: Qué Puedes Hacer con tu Máster</div><div class="related-card-meta">9 min · Equipo Estemia</div></div>
         </a>
       </div>
     </div>
 
   </div>
 </div>
-
 </main>
 
 <footer class="site-footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">
-      <div>
-        <div class="footer-logo">Aura<span>med</span></div>
-        <p class="footer-desc">Escuela de referencia en Medicina Estética, Antienvejecimiento y Nutrición. Partner oficial UCAM.</p>
-        <a href="tel:+34656438139" class="footer-contact-item"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013 5.18 2 2 0 015 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>+34 656 438 139</a>
-        <a href="mailto:info@auramed.es" class="footer-contact-item"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@auramed.es</a>
-      </div>
+      <div><div class="footer-logo">Esti<span>mia</span></div><p class="footer-desc">Escuela de referencia en Medicina Estética, Antienvejecimiento y Nutrición. Partner oficial UCAM.</p><a href="tel:+34656438139" class="footer-contact-item"><i class="bi bi-telephone"></i> +34 656 438 139</a><a href="mailto:info@estemia.com" class="footer-contact-item"><i class="bi bi-envelope"></i> info@estemia.com</a></div>
       <div class="footer-col"><h5>Programas</h5><ul><li><a href="../servicios.html#medicina">Medicina Estética</a></li><li><a href="../servicios.html#tricologia">Tricología</a></li><li><a href="../servicios.html#enfermeria">Enfermería</a></li><li><a href="../servicios.html#auxiliar">Auxiliar</a></li></ul></div>
-      <div class="footer-col"><h5>Auramed</h5><ul><li><a href="../nosotros.html">Sobre nosotros</a></li><li><a href="index.html">Blog</a></li><li><a href="../contacto.html">Contacto</a></li></ul></div>
+      <div class="footer-col"><h5>Estemia</h5><ul><li><a href="../nosotros.html">Sobre nosotros</a></li><li><a href="index.html">Blog</a></li><li><a href="../contacto.html">Contacto</a></li></ul></div>
       <div class="footer-col"><h5>Legal</h5><ul><li><a href="../legal/aviso-legal.html">Aviso legal</a></li><li><a href="../legal/privacidad.html">Privacidad</a></li><li><a href="../legal/cookies.html">Cookies</a></li></ul></div>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-copy">© 2025 Auramed · Partner académico: UCAM</p>
-      <div class="footer-legal"><a href="../legal/aviso-legal.html">Aviso legal</a><a href="../legal/privacidad.html">Privacidad</a><a href="../legal/cookies.html">Cookies</a></div>
-    </div>
+    <div class="footer-bottom"><p class="footer-copy">&copy; 2025 Estemia &middot; Partner académico: UCAM</p><div class="footer-legal"><a href="../legal/aviso-legal.html">Aviso legal</a><a href="../legal/privacidad.html">Privacidad</a><a href="../legal/cookies.html">Cookies</a></div></div>
   </div>
 </footer>
-<div id="cookie-banner" role="dialog" aria-live="polite"><p>Usamos cookies. <a href="../legal/cookies.html">Más info</a>.</p><div class="cookie-btns"><button id="cookie-decline" class="btn btn-secondary btn-sm">Rechazar</button><button id="cookie-accept" class="btn btn-primary btn-sm">Aceptar</button></div></div>
-<button id="scroll-top" aria-label="Volver arriba"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg></button>
+<div id="cookie-banner" role="dialog" aria-live="polite"><p>Usamos cookies. <a href="../legal/cookies.html">Más info</a>.</p><div class="cookie-btns"><button id="cookie-decline" class="btn btn--secondary btn--sm">Rechazar</button><button id="cookie-accept" class="btn btn--primary btn--sm">Aceptar</button></div></div>
+<button id="scroll-top" aria-label="Volver al inicio"><i class="bi bi-chevron-up"></i></button>
 <script src="../js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,117 @@
+/* =============================================================================
+   ESTEMIA · pages/error.css
+   Estilos exclusivos de 404.html
+   ============================================================================= */
+
+.error-section {
+  min-height: 100vh;
+  background: var(--color-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--nav-height) var(--space-3) var(--space-6);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fondo decorativo */
+.error-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 30% 40%, rgba(45,106,173,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 70% 70%, rgba(184,150,62,0.07) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Patrón de puntos */
+.error-section::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.error-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+}
+
+/* -- Número 404 tipográfico -- */
+.error-code {
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 18vw, 10rem);
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--color-gold-alpha-40);
+  display: block;
+  margin-bottom: calc(-1 * var(--space-2));
+  user-select: none;
+  animation: fade-up 0.7s ease both;
+}
+
+.error-divider {
+  width: 56px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light));
+  margin: var(--space-3) auto;
+  animation: fade-up 0.7s 0.15s ease both;
+}
+
+.error-heading {
+  color: var(--color-white);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: var(--space-2);
+  animation: fade-up 0.7s 0.25s ease both;
+}
+
+.error-desc {
+  color: rgba(255,255,255,0.55);
+  font-size: var(--text-base);
+  margin-bottom: 0;
+  animation: fade-up 0.7s 0.35s ease both;
+}
+
+/* -- Botones de error -- */
+.error-btns {
+  display: flex;
+  gap: var(--space-2);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--space-5);
+  animation: fade-up 0.7s 0.45s ease both;
+}
+
+/* -- Links rápidos -- */
+.error-links {
+  margin-top: var(--space-5);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  justify-content: center;
+  animation: fade-up 0.7s 0.55s ease both;
+}
+
+.error-links a {
+  color: rgba(255,255,255,0.35);
+  font-size: var(--text-xs);
+  padding: 6px var(--space-2);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: var(--radius-full);
+  transition: color var(--tr-base), border-color var(--tr-base);
+  font-weight: 500;
+}
+
+.error-links a:hover {
+  color: var(--color-gold-light);
+  border-color: var(--color-gold-alpha-40);
+}
+
+@media (max-width: 480px) {
+  .error-btns { flex-direction: column; align-items: center; }
+  .error-btns .btn { width: 100%; max-width: 280px; }
+}
